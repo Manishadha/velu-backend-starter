@@ -1,0 +1,6 @@
+from __future__ import annotations
+from typing import Protocol, Any
+
+class Queue(Protocol):
+    def list_recent_for_org(self, *, org_id: str, limit: int = 50) -> list[dict[str, Any]]: ...
+    def load_for_org(self, *, org_id: str, job_id: str) -> dict[str, Any] | None: ...

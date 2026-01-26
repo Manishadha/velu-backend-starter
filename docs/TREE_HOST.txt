@@ -1,0 +1,16 @@
+# tree snapshot @ 2025-11-12 18:43:57
+./
+./
+  .env
+  Caddyfile
+  Caddyfile.bak.1762955966
+  TREE_HOST.txt
+  docker-compose.yml
+  docker-compose.yml.bak.1762955966
+  prometheus.yml
+  repo_tree.txt
+  docs/  # docs
+    TREE_HOST.txt
+  git/
+  ui/  # static UI
+    index.html

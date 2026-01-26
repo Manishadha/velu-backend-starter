@@ -1,0 +1,8 @@
+{
+  "name": "web",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^25.0.2",
+    "@types/react": "^19.2.7"
+  }
+}

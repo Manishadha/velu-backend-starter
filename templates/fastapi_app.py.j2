@@ -1,0 +1,29 @@
+from fastapi import FastAPI
+
+
+def create_app() -> FastAPI:
+    app = FastAPI(title="{{ title }}", version="{{ version }}")
+
+    try:
+        from .security.headers import install_security_middleware  # type: ignore[import]
+    except ImportError:
+        install_security_middleware = None
+
+    if install_security_middleware is not None:
+        install_security_middleware(app)
+
+    from .routes import health
+    app.include_router(health.router, prefix="")
+
+    try:
+        from .routes import ai as ai_routes  # type: ignore[import]
+    except ImportError:
+        ai_routes = None
+
+    if ai_routes is not None:
+        app.include_router(ai_routes.router, prefix="")
+
+    return app
+
+
+app = create_app()

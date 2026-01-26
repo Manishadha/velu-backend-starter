@@ -1,0 +1,101 @@
+
+.next/
+coverage/
+artifacts/
+data/jobs.db
+data/pointers/
+
+
+# Python
+
+__pycache__/
+*.py[cod]
+*.pyc
+.venv/
+.cache/
+*.pyo
+*.pyd
+
+# Env & secrets (DO NOT COMMIT)
+.env
+.env.*
+.envrc
+.idea/
+.vscode/
+.DS_Store
+monitoring/prom_basic_pass.txt
+
+# SQLite data (local & volumes)
+*.sqlite3
+*.db
+**/*.db
+**/*.db-*
+**/*-wal
+**/*-shm
+**/*-journal
+
+# Ignore data but allow overlay code in data/src/
+!data/src/
+!data/src/local_tasks.py
+!data/src/sitecustomize.py
+data/src/**/__pycache__/
+data/src/**/*.py[cod]
+/data/generated/
+/src/velu.egg-info/
+
+# Docker / runtime state
+*.log
+*.pid
+docker-compose.override.yml
+caddy_data/
+caddy_config/
+config/
+
+# Node (if present)
+node_modules/
+.dist/
+.run/
+.pytest_cache/
+dist/
+build/
+
+# Local ops env
+ops/config/*.env
+.local-env/
+data/git/
+.env.local-dev
+.venv
+# virtual envs / caches
+
+venv/
+
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.eggs/
+*.egg-info/
+
+# Velu local artifacts / generated apps
+artifacts/
+packager_demo_mod.zip
+my_trips_api.py
+account_api.py
+travel_api.py
+
+# Next.js build + deps
+generated/web/.next/
+generated/web/node_modules/
+generated/web/out/
+data/chat_sessions/
+
+.env.secrets
+.env.*.secrets
+.coverage
+
+# local runtime outputs
+artifacts/
+blueprints/
+data/chat_sessions/
+
+.env.secrets
+.env.test.secrets

@@ -1,0 +1,3 @@
+FROM velu-base:local
+WORKDIR /app
+CMD ["python", "-m", "services.worker.main"]

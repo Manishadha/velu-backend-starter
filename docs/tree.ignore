@@ -1,0 +1,36 @@
+# --- VCS / caches ---
+.git
+__pycache__
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# --- virtualenvs ---
+.venv
+venv
+
+# --- node / web build junk ---
+node_modules
+.next
+dist
+build
+out
+coverage
+.turbo
+.cache
+.vercel
+
+# --- local/runtime data ---
+.local
+.run
+data
+artifacts
+*.log
+*.zip
+*.db
+*.db-shm
+*.db-wal
+
+# --- generated output clones ---
+generated
+blueprints/*/generated

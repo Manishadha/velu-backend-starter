@@ -1,0 +1,29 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+exclude = '''
+(
+  ^data/
+| ^generated/
+| ^caddy_data/
+| ^caddy_config/
+| ^grafana_data/
+| ^prom_data/
+| ^node_modules/
+| ^web/node_modules/
+| ^velu-console/node_modules/
+| ^\.venv/
+| ^dist/
+| ^build/
+| ^src/velu\.egg-info/
+)
+'''
+# force-exclude 
+force-exclude = '''
+(
+  ^data/
+| ^generated/
+| ^web/
+| ^velu-console/
+)
+'''

@@ -1,0 +1,58 @@
+name: lint-and-test
+
+on:
+  pull_request:
+    branches: [ main, dev ]
+  push:
+    branches: [ main, dev ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.12" ]
+    env:
+      PYTHONPATH: src:data/src
+      API_KEYS: ""
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      - name: Git identity (for agent commits in tests)
+        run: |
+          git config --global user.email "ci@velu.local"
+          git config --global user.name  "Velu CI"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -U pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f tests/requirements.txt ]; then pip install -r tests/requirements.txt; fi
+          pip install fastapi uvicorn pytest ruff black requests
+
+      - name: Lint (2025)
+        run: |
+          ruff check .
+          black --check . || true
+
+      - name: Run tests (server + worker; no auth in CI)
+        run: |
+          set -e
+          mkdir -p .run
+          export TASK_DB="$PWD/.run/jobs.db"
+          export PYTHONPATH="src:data/src"
+
+          nohup env TASK_DB="$TASK_DB" PYTHONPATH="src" \
+            uvicorn services.app_server.main:create_app --factory --host 127.0.0.1 --port 8010 &
+
+          nohup env TASK_DB="$TASK_DB" WORKER_ENABLE_PIPELINE=1 WORKER_MAX_JOBS=0 PYTHONPATH="$PYTHONPATH" \
+            python -m services.worker.main &
+
+          sleep 3
+          pytest -q

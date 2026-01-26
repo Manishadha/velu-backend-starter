@@ -1,0 +1,52 @@
+
+services:
+  app:
+    build: .
+    image: velu-app:latest
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      API_KEYS: ${API_KEYS}
+      CORS_ORIGINS: ${CORS_ORIGINS}
+      HOST: ${HOST}
+      PORT: ${PORT}
+      TASK_DB: ${TASK_DB}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    restart: unless-stopped
+    read_only: true
+    tmpfs: ["/tmp"]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8000/health >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "3" }
+
+  worker:
+    image: velu-app:latest
+    command: ["python", "-m", "services.queue.worker_entry"]
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      TASK_DB: ${TASK_DB}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    restart: unless-stopped
+    read_only: true
+    tmpfs: ["/tmp"]
+secrets:
+  prom_basic_pass.txt:
+    file: ./monitoring/prom_basic_pass.txt
+
+volumes:
+  caddy_config:
+  grafana_data:
+
+volumes:
+  caddy_data:
+  caddy_config:
+  grafana_data:
+  prom_data:

@@ -1,0 +1,13 @@
+.git
+.venv
+dist
+build
+__pycache__/
+*.pyc
+node_modules
+data
+caddy_data
+caddy_config
+grafana_data
+prom_data
+tests/__pycache__

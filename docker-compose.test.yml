@@ -1,0 +1,205 @@
+services:
+  postgres_test:
+    profiles: ["test"]
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: "velu"
+      POSTGRES_PASSWORD: "velu"
+      POSTGRES_DB: "velu_test"
+    volumes:
+      - velu_pgdata_test:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U velu -d velu_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  bootstrap_init:
+    profiles: ["test"]
+    image: busybox:1.36
+    user: "0:0"
+    command:
+      - sh
+      - -lc
+      - |
+        set -e
+        mkdir -p /bootstrap /data
+        chown -R 10001:10001 /bootstrap /data
+        chmod -R ug+rwX /bootstrap /data
+    volumes:
+      - velu_bootstrap:/bootstrap
+      - velu_data_test:/data
+    restart: "no"
+
+  migrate_test:
+    profiles: ["test"]
+    image: velu-app:local
+    user: "10001:10001"
+    env_file:
+      - .env.test
+      - .env.test.secrets
+    environment:
+      ENV: "test"
+      DATABASE_URL: "postgresql+psycopg://velu:velu@postgres_test:5432/velu_test"
+      VELU_RUN_MIGRATIONS: "1"
+      VELU_TESTING: "0"
+      ADMIN_ROUTES: "1"
+      ENFORCE_TIERS: "0"
+      VELU_ENFORCE_TIERS: "0"
+    volumes:
+      - ./:/app
+    depends_on:
+      bootstrap_init:
+        condition: service_completed_successfully
+      postgres_test:
+        condition: service_healthy
+    command:
+      - sh
+      - -lc
+      - |
+        set -eu
+        export VELU_TESTING=0
+        python -c 'from services.db.migrate import migrate; migrate()'
+    restart: "no"
+
+  db_bootstrap_test:
+    profiles: ["test"]
+    image: velu-app:local
+    user: "10001:10001"
+    env_file:
+      - .env.test
+      - .env.test.secrets
+    environment:
+      ENV: "test"
+      DATABASE_URL: "postgresql+psycopg://velu:velu@postgres_test:5432/velu_test"
+      VELU_BOOTSTRAP_DB: "1"
+      VELU_BOOTSTRAP_ORG_SLUG: "velu-test"
+      VELU_BOOTSTRAP_ORG_NAME: "Velu Test"
+      VELU_BOOTSTRAP_OUT: "/bootstrap/test_api_keys.env"
+      VELU_BOOTSTRAP_REQUIRED_TABLES: "public.organizations,public.api_keys"
+      VELU_BOOTSTRAP_WAIT_SEC: "180"
+      VELU_TESTING: "0"
+      ADMIN_ROUTES: "1"
+      ENFORCE_TIERS: "0"
+      VELU_ENFORCE_TIERS: "0"
+    volumes:
+      - ./:/app
+      - velu_bootstrap:/bootstrap
+    depends_on:
+      migrate_test:
+        condition: service_completed_successfully
+    command:
+      - sh
+      - -lc
+      - |
+        set -eu
+        export VELU_TESTING=0
+        python /app/ops/bootstrap_db.py
+    restart: "no"
+
+  test:
+    profiles: ["test"]
+    image: velu-app:local
+    user: "10001:10001"
+    env_file:
+      - .env.test
+      - .env.test.secrets
+    environment:
+      ENV: "test"
+      DATABASE_URL: "postgresql+psycopg://velu:velu@postgres_test:5432/velu_test"
+
+      ADMIN_ROUTES: "1"
+      ENFORCE_TIERS: "0"
+      VELU_ENFORCE_TIERS: "0"
+
+      VELU_DATA_DIR: "/data"
+      TASK_DB: "/data/jobs.db"
+      BLUEPRINT_DB: "/data/blueprints.db"
+
+      # runner behavior
+      VELU_TESTING: "1"
+      VELU_DISABLE_WORKER_THREADS: "1"
+      NO_EMBEDDED_API: "1"
+
+      PYTEST_ADDOPTS: "-o cache_dir=/tmp/pytest_cache -q"
+
+      # Phase 1 defaults
+      VELU_API_KEYS_BACKEND: "env"
+      VELU_TEST_DB_LOOKUP: "0"
+      ENFORCE_SCOPES: "0"
+      VELU_JOBS_BACKEND: "sqlite"
+
+    volumes:
+      - ./:/app
+      - velu_bootstrap:/bootstrap
+      - velu_data_test:/data
+    depends_on:
+      db_bootstrap_test:
+        condition: service_completed_successfully
+    working_dir: /app
+    command:
+      - sh
+      - -lc
+      - |
+        set -eu
+
+        echo "== waiting for bootstrap file =="
+        for _ in $(seq 1 180); do
+          [ -f /bootstrap/test_api_keys.env ] && break
+          sleep 1
+        done
+        if [ ! -f /bootstrap/test_api_keys.env ]; then
+          echo "ERROR: bootstrap file missing"
+          ls -la /bootstrap || true
+          exit 2
+        fi
+
+        echo "== normalize bootstrap file =="
+        tr -d '\r' < /bootstrap/test_api_keys.env > /tmp/test_api_keys.env
+
+        echo "== source bootstrap keys =="
+        set -a
+        . /tmp/test_api_keys.env
+        set +a
+
+        echo "== ensure platform admin key exists =="
+        if [ -z "${VELU_ADMIN_KEY:-}" ]; then
+          echo "ERROR: VELU_ADMIN_KEY missing after sourcing bootstrap file"
+          echo "--- file ---"
+          cat /tmp/test_api_keys.env || true
+          exit 3
+        fi
+        export TEST_PLATFORM_ADMIN_KEY="$VELU_ADMIN_KEY"
+
+        echo "== Phase 1: main suite (sqlite jobs + env keys backend) =="
+        export VELU_JOBS_BACKEND="sqlite"
+        export VELU_API_KEYS_BACKEND="env"
+        export VELU_TEST_DB_LOOKUP="0"
+        export ENFORCE_SCOPES="0"
+        unset API_KEYS || true
+
+        pytest \
+          --ignore=tests/integration/test_jobs_api_postgres.py \
+          --ignore=tests/integration/test_api_key_scopes_postgres.py \
+          --ignore=tests/integration/test_admin_api_keys_postgres.py
+
+        echo "== Phase 2: postgres API keys backend + scopes/admin tests =="
+        export VELU_API_KEYS_BACKEND="postgres"
+        export VELU_TEST_DB_LOOKUP="1"
+        export ENFORCE_SCOPES="1"
+
+        pytest \
+          tests/integration/test_api_key_scopes_postgres.py \
+          tests/integration/test_admin_api_keys_postgres.py
+
+        echo "== Phase 3: postgres jobs backend (jobs api tests only) =="
+        export VELU_JOBS_BACKEND="postgres"
+
+        pytest \
+          tests/integration/test_jobs_api_postgres.py
+    restart: "no"
+
+volumes:
+  velu_pgdata_test:
+  velu_bootstrap:
+  velu_data_test:

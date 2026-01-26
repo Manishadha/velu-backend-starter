@@ -1,0 +1,369 @@
+# tree snapshot @ 2025-11-12 18:43:57
+./
+./
+   docker-compose.override.yml
+  .bashrc
+  .dockerignore
+  .editorconfig
+  .env.example
+  .env.local-dev
+  .env.prod
+  .git-blame-ignore-revs
+  .git-filter-repo-replacements.txt
+  .gitattributes
+  .gitignore
+  .pre-commit-config.yaml
+  .yamllint.yaml
+  CACHED
+  CODEOWNERS
+  CONTRIBUTING.md
+  Caddyfile
+  Caddyfile.bak.2025-10-04-134941
+  Dockerfile
+  Dockerfile.api
+  Dockerfile.worker
+  LICENSE
+  Makefile
+  Makefile.bak
+  README.md
+  agents_bundle.md
+  assert
+  bandit.yaml
+  docker-compose.prod.yml
+  docker-compose.yml
+  docker-compose.yml.bak
+  job-51869456615-logs.zip
+  job-51869456615.log
+  job-51869456615.txt
+  job-51869456615.zip
+  main.py
+  mypy.ini
+  prometheus.yml
+  prometheus_stats.json
+  pyproject.toml
+  reading
+  repo_tree.txt
+  requirements.txt
+  run-18217369888.log
+  run-18217369888.zip
+  sitecustomize.py
+  velu_chat_behavior_2025.txt
+  .devcontainer/
+    devcontainer.json
+  .github/
+    CODEOWNERS
+    workflows/
+      auto-tag-and-release.yml
+      docker-publish.yml
+      docker.yml
+      ghcr-build.yml
+      lint-and-test.yml
+      lint.yml
+      pr-auto-approve-and-automerge.yml
+      security-scan.yml
+  .run/
+    jobs.db
+    tasks.jsonl
+    tasks.log
+    worker.log
+  agents/
+    __init__.py
+    architecture_agent.py
+    build_agent.py
+    codegen_agent.py
+    debug_agent.py
+    deploy_agent.py
+    executor_agent.py
+    planning_agent.py
+    security_agent.py
+    ui_agent.py
+    git_agent/
+      __init__.py
+      agent.py
+      git_utils.py
+  caddy/
+    Caddyfile
+  configs/  # configs
+    agent.yml
+    database.yml
+    logging.yml
+    models.yml
+    policies.yml
+  data/  # runtime data
+    .keep
+    jobs.db.bak.1760536343
+    local_tasks.py
+    tasks.db
+    tasks.jsonl
+    migrations/  # runtime data
+      .gitkeep
+    models/  # runtime data
+      .gitkeep
+    pointers/  # runtime data
+      .gitkeep
+      tasks.db
+      tasks.db-shm
+      tasks.db-wal
+    rules/  # runtime data
+      .gitkeep
+      baseline.json
+    src/  # runtime data
+      hello_mod.py
+      ok.py
+      sitecustomize.py
+    tests/  # runtime data
+      pytest.ini
+      test_health.py
+      test_hello_mod.py
+      test_ok.py
+    threat-intel/  # runtime data
+      .gitkeep
+  docs/  # docs
+    ARCHITECTURE.md
+    AUDIT_CHECKLIST.md
+    CHANGELOG.md
+    COMPLIANCE.md
+    HANDOVER.md
+    SECURITY.md
+    TREE_HOST.txt
+    TREE_REPO.txt
+    legal/  # docs
+      ACCEPTABLE_USE.md
+      ACCESSIBILITY_STATEMENT.md
+      COOKIE_POLICY.md
+      DPA.md
+      PRIVACY_POLICY.md
+      SLA.md
+      TERMS_OF_SERVICE.md
+  generated/
+    hello_mod.py
+    services/
+      ai/
+        assistant.py
+      api/
+        app.py
+        routes/
+          health.py
+      app_server/
+        security/
+          headers.py
+    web/
+      package.json
+      pages/
+        index.tsx
+  local/
+    local_tasks.py
+  migrations/
+    001_init.sql
+  monitoring/  # monitoring
+    alerts.yml
+    prom_basic_pass.txt
+    prom_basic_pass.txt.example
+    prometheus.yml
+    provisioning/  # monitoring
+      datasources/  # monitoring
+        dashboards.yml
+        datasource.yml
+        grafana-prometheus-datasource.yaml
+  ops/  # ops
+    ci-cd/  # ops
+      build.yml
+      security-scan.yml
+      test.yml
+    config/  # ops
+    docker/  # ops
+      api.Dockerfile
+      model-router.Dockerfile
+      orchestrator.Dockerfile
+      policy-engine.Dockerfile
+      worker.Dockerfile
+    k8s/  # ops
+      model-router.yaml
+      orchestrator.yaml
+      policy-engine.yaml
+  orchestrator/  # orchestrator
+    __init__.py
+    agent_contracts.py
+    cli.py
+    router_client.py
+    state_manager.py
+    task_scheduler.py
+  scripts/
+    apply_result_files.py
+    audit.sh
+    cycle.sh
+    gen_tree.py
+    lint.sh
+    migrate.sh
+    mint_jwt.py
+    print_metrics.sh
+    run.sh
+    setup.sh
+    smoke.sh
+    sqlite_backup.py
+    submit_task.py
+    submit_task.sh
+    test.sh
+  services/  # core services
+    __init__.py
+    agents_legacy.py
+    agents/  # agents
+      __init__.py
+      aggregate.py
+      ai_features.py
+      analyzer.py
+      api_design.py
+      architecture.py
+      autodev.py
+      backend_scaffold.py
+      codegen.py
+      datamodel.py
+      echo.py
+      executor.py
+      gitcommit.py
+      intake.py
+      lint.py
+      pipeline.py
+      plan.py
+      planner.py
+      postdeploy_checks.py
+      report.py
+      reporter.py
+      requirements.py
+      security_hardening.py
+      tester.py
+      testgen.py
+      ui_scaffold.py
+    ai/  # core services
+      assistant.py
+    api/  # core services
+      app.py
+      routes/  # core services
+        health.py
+        users.py
+    app_server/  # FastAPI API
+      admin.py
+      auth.py
+      main.py
+      main.py.bak.latency_alias
+      main.py.bak.metrics
+      main.py.bak.metrics_fix
+      main.py.bak2
+      middleware.py
+      store.py
+      store.py.bak.ts
+      store_sqlite.py
+      worker.py
+      schemas/  # core services
+        intake.py
+      security/  # core services
+        headers.py
+      templates/  # core services
+        submit.html
+        tasks.html
+    feedback-monitor/  # core services
+      __init__.py
+      analyzer.py
+      monitor.py
+    model_router/  # core services
+      __init__.py
+      registry.py
+      model-router/  # core services
+        __init__.py
+        registry.json
+        registry.py
+        router.py
+    policy_engine/  # core services
+      __init__.py
+      engine.py
+      policy-engine/  # core services
+        __init__.py
+        engine.py
+        ruleset_schema.json
+    queue/  # job queue
+      sqlite_queue.py
+      standalone_worker.py
+      worker_entry.py
+    worker/  # core services
+      __init__.py
+      git_tasks.py
+      main.py
+  src/
+    hello_mod.py
+    local_tasks.py
+    ok.py
+    sitecustomize.py
+    user_service.py
+    UNKNOWN.egg-info/
+      PKG-INFO
+      SOURCES.txt
+      dependency_links.txt
+      top_level.txt
+    velu.egg-info/
+      PKG-INFO
+      SOURCES.txt
+      dependency_links.txt
+      top_level.txt
+  templates/  # code templates
+    fastapi_app.py.j2
+    next_index.tsx.j2
+    router_stub.py.j2
+    test_smoke.py.j2
+  tests/  # tests
+    __init__.py
+    conftest.py
+    pytest.ini
+    requirements.txt
+    test_git_agent.py
+    test_health.py
+    test_hello_mod.py
+    test_ok.py
+    test_planning_agent.py
+    test_rls_sample.py
+    test_smoke.py
+    test_user_service.py
+    integration/  # tests
+      __init__.py
+      test_api.py
+      test_auth.py
+      test_ready.py
+      test_router_policy.py
+      test_security.py
+      test_store_sqlite.py
+      test_worker.py
+    performance/  # tests
+      __init__.py
+    security/  # tests
+      __init__.py
+    unit/  # tests
+      __init__.py
+      test_codegen.py
+      test_store_ts_compat.py
+      test_worker_router_contract.py
+  tools/
+    autodev_cli.py
+  ui/  # static UI
+    console.html
+  velu-console/  # console UI
+    .env.local
+    .gitignore
+    Dockerfile
+    README.md
+    eslint.config.js
+    index.html
+    package-lock.json
+    package.json
+    vite.config.js
+    public/  # console UI
+      vite.svg
+    src/  # console UI
+      App.jsx
+      app.css
+      index.css
+      main.jsx
+      assets/  # console UI
+        react.svg
+  web/  # generated web
+    package.json
+    pages/  # generated web
+      index.tsx

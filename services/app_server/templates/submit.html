@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Submit</title></head>
+<body>
+  <h1>Submit a Task</h1>
+  <form action="/ui/tasks" method="post">
+    <label>Task: <input name="task" value="plan" /></label><br/>
+    <label>Payload (JSON):</label><br/>
+    <textarea name="payload" rows="8" cols="60">{"idea":"demo pipeline","module":"hello_mod"}</textarea><br/>
+    <button type="submit">Submit</button>
+  </form>
+  <p><a href="/ui/tasks">Back to tasks</a></p>
+</body>
+</html>

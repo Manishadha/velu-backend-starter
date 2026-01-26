@@ -1,0 +1,90 @@
+services:
+  data_init:
+    image: busybox:1.36
+    user: "0:0"
+    command: >
+      sh -c "
+        mkdir -p /data /git /workspace &&
+        chown -R 10001:10001 /data /git /workspace &&
+        chmod -R u+rwX /data /git /workspace
+      "
+    volumes:
+      - velu-data:/data
+      - velu_git-data:/git
+      - velu_workspace-data:/workspace
+    restart: "no"
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-velu}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-velu}
+      POSTGRES_DB: ${POSTGRES_DB:-velu_main}
+    volumes:
+      - velu_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-velu} -d ${POSTGRES_DB:-velu_main}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "127.0.0.1:5433:5432"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: app
+    image: velu-app:local
+    user: "10001:10001"
+    restart: unless-stopped
+    env_file: [.env, .env.secrets]
+    environment:
+      ENV: dev
+      DATABASE_URL: postgresql+psycopg://velu:velu@postgres:5432/velu_main
+      VELU_JOBS_BACKEND: postgres
+      VELU_RUN_MIGRATIONS: "1"
+    command: >
+      sh -lc "uvicorn services.app_server.main:app --host 0.0.0.0 --port 8000"
+    volumes:
+      - velu-data:/data
+      - velu_git-data:/git
+      - velu_workspace-data:/workspace
+    depends_on:
+      data_init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8001:8000"
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: worker
+    image: velu-worker:local
+    user: "10001:10001"
+    restart: unless-stopped
+    env_file: [.env, .env.secrets]
+    environment:
+      ENV: dev
+      DATABASE_URL: postgresql+psycopg://velu:velu@postgres:5432/velu_main
+      VELU_JOBS_BACKEND: postgres
+    command: >
+      sh -lc "python -m services.worker.main"
+    volumes:
+      - velu-data:/data
+      - velu_git-data:/git
+      - velu_workspace-data:/workspace
+    depends_on:
+      data_init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+
+volumes:
+  velu-data:
+  velu_git-data:
+  velu_workspace-data:
+  velu_pgdata:

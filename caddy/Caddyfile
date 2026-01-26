@@ -1,0 +1,40 @@
+:80 {
+  encode zstd gzip
+
+  # Security headers (safe on HTTP too; HSTS omitted since it's HTTP)
+  header {
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "no-referrer"
+    # Keep CSP strict; relax only if your console needs more
+    Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'"
+  }
+
+  # Protect only /metrics
+  @metrics path /metrics*
+  handle @metrics {
+    basicauth {
+      admin $2a$14$C/rd22ab5n8Lcm2hpVefkezsCWJMYDcGHiI/KDRYOOv4R4BOHkzp6
+    }
+    reverse_proxy api:8010
+  }
+
+  # Everything else → API (health, tasks, etc.)
+  handle {
+    reverse_proxy api:8010 {
+      health_uri /ready
+      fail_duration 5s
+      max_fails 1
+      transport http {
+        read_timeout 30s
+        write_timeout 30s
+        keepalive 30s
+      }
+    }
+  }
+
+  log {
+    output stdout
+    format json
+  }
+}

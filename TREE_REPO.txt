@@ -1,0 +1,2054 @@
+.
+├── agents
+│   ├── git_agent
+│   │   ├── agent.py
+│   │   ├── git_utils.py
+│   │   └── __init__.py
+│   ├── architecture_agent.py
+│   ├── build_agent.py
+│   ├── codegen_agent.py
+│   ├── debug_agent.py
+│   ├── deploy_agent.py
+│   ├── executor_agent.py
+│   ├── __init__.py
+│   ├── planning_agent.py
+│   ├── security_agent.py
+│   └── ui_agent.py
+├── artifacts
+│   └── velu_dev.zip
+├── blueprints
+│   └── shop_fastapi_next
+│       ├── generated
+│       │   ├── product_catalog_web_1
+│       │   │   ├── generated
+│       │   │   ├── react_spa
+│       │   │   ├── src
+│       │   │   ├── tests
+│       │   │   ├── web
+│       │   │   ├── docker-compose.packaged.yml
+│       │   │   ├── Dockerfile_packaged
+│       │   │   ├── pyproject.toml
+│       │   │   ├── pytest.ini
+│       │   │   ├── README.md
+│       │   │   ├── README_packaged.md
+│       │   │   └── requirements.txt
+│       │   ├── product_catalog_web_2
+│       │   │   ├── generated
+│       │   │   ├── react_spa
+│       │   │   ├── src
+│       │   │   ├── tests
+│       │   │   ├── web
+│       │   │   ├── docker-compose.packaged.yml
+│       │   │   ├── Dockerfile_packaged
+│       │   │   ├── pyproject.toml
+│       │   │   ├── README.md
+│       │   │   ├── README_packaged.md
+│       │   │   └── requirements.txt
+│       │   ├── scripts
+│       │   │   └── verify_shop.sh
+│       │   ├── services
+│       │   │   ├── ai
+│       │   │   ├── api
+│       │   │   ├── app_server
+│       │   │   ├── node
+│       │   │   └── __init__.py
+│       │   ├── src
+│       │   │   └── shop_fastapi_next.py
+│       │   ├── tests
+│       │   │   ├── test_shop_fastapi_next.py
+│       │   │   └── test_shop_rbac.py
+│       │   ├── web
+│       │   │   ├── components
+│       │   │   ├── i18n
+│       │   │   ├── lib
+│       │   │   ├── pages
+│       │   │   ├── styles
+│       │   │   ├── i18n.locales.json
+│       │   │   ├── next-env.d.ts
+│       │   │   ├── package.json
+│       │   │   ├── package-lock.json
+│       │   │   ├── postcss.config.mjs
+│       │   │   ├── tailwind.config.js
+│       │   │   └── tsconfig.json
+│       │   ├── hello_mod.py
+│       │   ├── __init__.py
+│       │   ├── pytest.ini
+│       │   └── run_api.sh
+│       ├── DEPLOYMENT_GUIDE.md
+│       ├── ENVIRONMENT_VARIABLES.md
+│       ├── README_client.md
+│       └── README_developer.md
+├── caddy
+│   └── Caddyfile
+├── configs
+│   ├── agent.yml
+│   ├── database.yml
+│   ├── __init__.py
+│   ├── language_catalog.py
+│   ├── logging.yml
+│   ├── models.yml
+│   └── policies.yml
+├── data
+│   ├── chat_sessions
+│   │   ├── demo_autobuild.json
+│   │   ├── happy_app_v2.json
+│   │   ├── hotel_app_v1.json
+│   │   ├── my_trips_v2.json
+│   │   ├── online_travel_v2.json
+│   │   ├── packager_demo.json
+│   │   ├── project_1763384999540.json
+│   │   ├── project_1763385391339.json
+│   │   ├── project_1763388495175.json
+│   │   ├── project_1763388640144.json
+│   │   ├── project_1763391235715.json
+│   │   ├── project_1763391556910.json
+│   │   ├── project_1763626054582.json
+│   │   ├── project_1763631404587.json
+│   │   ├── project_1763633295018.json
+│   │   ├── project_1763633579983.json
+│   │   ├── project_1763639451162.json
+│   │   ├── project_1763646721245.json
+│   │   ├── project_1763661433483.json
+│   │   ├── project_1763663784252.json
+│   │   ├── project_1763739418352.json
+│   │   ├── project_1763741463720.json
+│   │   ├── project_1763742117479.json
+│   │   ├── project_1763743594031.json
+│   │   ├── project_1763743730135.json
+│   │   ├── project_1763758290637.json
+│   │   ├── project_1763821185996.json
+│   │   ├── project_1764019891979.json
+│   │   ├── project_1764150124864.json
+│   │   ├── project_1764185875109.json
+│   │   ├── project_1764188014949.json
+│   │   ├── project_1766747421866.json
+│   │   ├── project_debug.json
+│   │   ├── project_foo.json
+│   │   ├── shop_v2.json
+│   │   ├── store_app_v1.json
+│   │   ├── test_remote.json
+│   │   ├── test_rules.json
+│   │   ├── travel_app_v10.json
+│   │   ├── travel_app_v11.json
+│   │   ├── travel_app_v1.json
+│   │   ├── travel_app_v2.json
+│   │   ├── travel_app_v3.json
+│   │   ├── travel_app_v4.json
+│   │   ├── travel_app_v5.json
+│   │   ├── travel_app_v6.json
+│   │   ├── travel_app_v7.json
+│   │   ├── travel_app_v8.json
+│   │   ├── travel_app_v9.json
+│   │   ├── ve.json
+│   │   ├── vel.json
+│   │   ├── velproject_1763743594031.json
+│   │   ├── velu_defa.json
+│   │   ├── velu_defaproject_1763743594031.json
+│   │   ├── velu_defau.json
+│   │   ├── velu_defaul.json
+│   │   ├── velu_defaulproject_1763743594031.json
+│   │   ├── velu_default.json
+│   │   ├── velu_defaultproject_1763743594031.json
+│   │   ├── velu_defauproject_1763743594031.json
+│   │   ├── velu_def.json
+│   │   ├── velu_defproject_1763743594031.json
+│   │   ├── velu_de.json
+│   │   ├── velu_deproject_1763743594031.json
+│   │   ├── velu_d.json
+│   │   ├── velu_dproject_1763743594031.json
+│   │   ├── velu.json
+│   │   ├── velu_.json
+│   │   ├── velu_project_1763743594031.json
+│   │   ├── veluproject_1763743594031.json
+│   │   ├── veproject_1763743594031.json
+│   │   ├── v.json
+│   │   └── vproject_1763743594031.json
+│   ├── migrations
+│   │   └── .gitkeep
+│   ├── models
+│   │   └── .gitkeep
+│   ├── pointers
+│   │   ├── .gitkeep
+│   │   └── tasks.db
+│   ├── rules
+│   │   ├── baseline.json
+│   │   └── .gitkeep
+│   ├── src
+│   │   ├── hello_mod.py
+│   │   ├── ok.py
+│   │   └── sitecustomize.py
+│   ├── tests
+│   │   ├── pytest.ini
+│   │   ├── pytest.ini.bak
+│   │   ├── test_health.py
+│   │   ├── test_hello_mod.py
+│   │   └── test_ok.py
+│   ├── threat-intel
+│   │   └── .gitkeep
+│   ├── blueprints.db
+│   ├── jobs.db
+│   ├── jobs.db-shm
+│   ├── jobs.db-wal
+│   ├── tasks.log
+│   └── travel.db
+├── .devcontainer
+│   └── devcontainer.json
+├── docs
+│   ├── legal
+│   │   ├── ACCEPTABLE_USE.md
+│   │   ├── ACCESSIBILITY_STATEMENT.md
+│   │   ├── COOKIE_POLICY.md
+│   │   ├── DPA.md
+│   │   ├── PRIVACY_POLICY.md
+│   │   ├── SLA.md
+│   │   └── TERMS_OF_SERVICE.md
+│   ├── AI_ASSISTANTS.md
+│   ├── AI_I18N_DEMO.md
+│   ├── ARCHITECTURE.md
+│   ├── ASSISTANT_INTAKE_DEMO.md
+│   ├── ASSISTANT_MODE.md
+│   ├── AUDIT_CHECKLIST.md
+│   ├── CHANGELOG.md
+│   ├── COMPLIANCE.md
+│   ├── DECLARATIVE_MODE.md
+│   ├── DEV_START.md
+│   ├── HANDOVER.md
+│   ├── MULTISTACK_BLUEPRINTS.md
+│   ├── MULTISTACK_DEMO.md
+│   ├── REMOTE_LLM.md
+│   ├── running.md
+│   ├── Running.md
+│   ├── RUNNING_VELU.md
+│   ├── RUNTIME.md
+│   ├── SAAS_AUTH.md
+│   ├── SECURITY.md
+│   ├── STATE.md
+│   ├── TREE_HOST.txt
+│   ├── TREE_REPO.txt
+│   ├── VELU_BRAIN_RUNBOOK.md
+│   └── VELU_DEV_HANDBOOK.md
+├── generated
+│   ├── product_catalog_web_1
+│   │   ├── generated
+│   │   │   ├── services
+│   │   │   │   ├── ai
+│   │   │   │   ├── api
+│   │   │   │   ├── app_server
+│   │   │   │   ├── llm
+│   │   │   │   ├── node
+│   │   │   │   └── __init__.py
+│   │   │   ├── web
+│   │   │   │   ├── components
+│   │   │   │   ├── i18n
+│   │   │   │   ├── pages
+│   │   │   │   ├── styles
+│   │   │   │   ├── next-env.d.ts
+│   │   │   │   ├── package.json
+│   │   │   │   ├── package-lock.json
+│   │   │   │   ├── postcss.config.js
+│   │   │   │   ├── tailwind.config.js
+│   │   │   │   └── tsconfig.json
+│   │   │   └── hello_mod.py
+│   │   ├── react_spa
+│   │   │   ├── src
+│   │   │   │   ├── App.jsx
+│   │   │   │   ├── index.css
+│   │   │   │   └── main.jsx
+│   │   │   ├── i18n.locales.json
+│   │   │   ├── index.html
+│   │   │   ├── package.json
+│   │   │   ├── package-lock.json
+│   │   │   └── vite.config.js
+│   │   ├── src
+│   │   │   ├── account_codegen.py
+│   │   │   ├── account_models.py
+│   │   │   ├── ai_demo.py
+│   │   │   ├── blog_mod.py
+│   │   │   ├── build.py
+│   │   │   ├── global_dashboard.py
+│   │   │   ├── global_dashboard_v2.py
+│   │   │   ├── hello_mod.py
+│   │   │   ├── hospial_webapp.py
+│   │   │   ├── i_need_an_app_to_play_chess.py
+│   │   │   ├── __init__.py
+│   │   │   ├── inventory_mod.py
+│   │   │   ├── inventory_service.py
+│   │   │   ├── landing_sync.py
+│   │   │   ├── math_mod.py
+│   │   │   ├── ml_dashboard.py
+│   │   │   ├── my_product_site.py
+│   │   │   ├── my_trips.py
+│   │   │   ├── ok.py
+│   │   │   ├── online_travel.py
+│   │   │   ├── packager_demo_mod.py
+│   │   │   ├── react_ml_demo.py
+│   │   │   ├── repo_summary.py
+│   │   │   ├── tasks_mod.py
+│   │   │   ├── tasks_service.py
+│   │   │   ├── team_dashboard.py
+│   │   │   └── user_service.py
+│   │   ├── tests
+│   │   │   ├── integration
+│   │   │   │   └── __init__.py
+│   │   │   ├── performance
+│   │   │   │   └── __init__.py
+│   │   │   ├── security
+│   │   │   │   └── __init__.py
+│   │   │   ├── unit
+│   │   │   │   └── __init__.py
+│   │   │   ├── conftest.py
+│   │   │   ├── __init__.py
+│   │   │   ├── pytest.ini
+│   │   │   └── requirements.txt
+│   │   ├── web
+│   │   │   ├── pages
+│   │   │   │   └── index.tsx
+│   │   │   ├── i18n.locales.json
+│   │   │   └── package.json
+│   │   ├── docker-compose.packaged.yml
+│   │   ├── Dockerfile_packaged
+│   │   ├── pyproject.toml
+│   │   ├── pytest.ini
+│   │   ├── pytest.ini.bak
+│   │   ├── README.md
+│   │   ├── README_packaged.md
+│   │   └── requirements.txt
+│   ├── product_catalog_web_2
+│   │   ├── generated
+│   │   │   ├── product_catalog_web_1
+│   │   │   │   ├── generated
+│   │   │   │   ├── react_spa
+│   │   │   │   ├── src
+│   │   │   │   ├── tests
+│   │   │   │   ├── web
+│   │   │   │   ├── docker-compose.packaged.yml
+│   │   │   │   ├── Dockerfile_packaged
+│   │   │   │   ├── pyproject.toml
+│   │   │   │   ├── README.md
+│   │   │   │   ├── README_packaged.md
+│   │   │   │   └── requirements.txt
+│   │   │   ├── services
+│   │   │   │   ├── ai
+│   │   │   │   ├── api
+│   │   │   │   ├── app_server
+│   │   │   │   ├── llm
+│   │   │   │   ├── node
+│   │   │   │   └── __init__.py
+│   │   │   ├── web
+│   │   │   │   ├── components
+│   │   │   │   ├── i18n
+│   │   │   │   ├── pages
+│   │   │   │   ├── styles
+│   │   │   │   ├── next-env.d.ts
+│   │   │   │   ├── package.json
+│   │   │   │   ├── package-lock.json
+│   │   │   │   ├── postcss.config.js
+│   │   │   │   ├── tailwind.config.js
+│   │   │   │   └── tsconfig.json
+│   │   │   └── hello_mod.py
+│   │   ├── react_spa
+│   │   │   ├── src
+│   │   │   │   ├── App.jsx
+│   │   │   │   ├── index.css
+│   │   │   │   └── main.jsx
+│   │   │   ├── i18n.locales.json
+│   │   │   ├── index.html
+│   │   │   ├── package.json
+│   │   │   ├── package-lock.json
+│   │   │   └── vite.config.js
+│   │   ├── src
+│   │   │   ├── account_codegen.py
+│   │   │   ├── account_models.py
+│   │   │   ├── ai_demo.py
+│   │   │   ├── blog_mod.py
+│   │   │   ├── build.py
+│   │   │   ├── global_dashboard.py
+│   │   │   ├── global_dashboard_v2.py
+│   │   │   ├── hello_mod.py
+│   │   │   ├── hospial_webapp.py
+│   │   │   ├── i_need_an_app_to_play_chess.py
+│   │   │   ├── __init__.py
+│   │   │   ├── inventory_mod.py
+│   │   │   ├── inventory_service.py
+│   │   │   ├── landing_sync.py
+│   │   │   ├── math_mod.py
+│   │   │   ├── ml_dashboard.py
+│   │   │   ├── my_product_site.py
+│   │   │   ├── my_trips.py
+│   │   │   ├── ok.py
+│   │   │   ├── online_travel.py
+│   │   │   ├── packager_demo_mod.py
+│   │   │   ├── product_catalog_web_1.py
+│   │   │   ├── react_ml_demo.py
+│   │   │   ├── repo_summary.py
+│   │   │   ├── tasks_mod.py
+│   │   │   ├── tasks_service.py
+│   │   │   ├── team_dashboard.py
+│   │   │   └── user_service.py
+│   │   ├── tests
+│   │   │   ├── integration
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── test_api.py
+│   │   │   │   ├── test_auth.py
+│   │   │   │   ├── test_ready.py
+│   │   │   │   ├── test_router_policy.py
+│   │   │   │   ├── test_security.py
+│   │   │   │   ├── test_store_sqlite.py
+│   │   │   │   └── test_worker.py
+│   │   │   ├── performance
+│   │   │   │   └── __init__.py
+│   │   │   ├── security
+│   │   │   │   └── __init__.py
+│   │   │   ├── unit
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── test_api_db_config.py
+│   │   │   │   ├── test_backend_scaffold_multi_backend.py
+│   │   │   │   ├── test_codegen.py
+│   │   │   │   ├── test_store_ts_compat.py
+│   │   │   │   └── test_worker_router_contract.py
+│   │   │   ├── conftest.py
+│   │   │   ├── __init__.py
+│   │   │   ├── pytest.ini
+│   │   │   ├── requirements.txt
+│   │   │   ├── test_ai_demo_pipeline_extra.py
+│   │   │   ├── test_ai_demo.py
+│   │   │   ├── test_blog_mod.py
+│   │   │   ├── test_blueprint_api.py
+│   │   │   ├── test_blueprint_catalog.py
+│   │   │   ├── test_blueprint_design_api.py
+│   │   │   ├── test_blueprint_from_hospital_spec.py
+│   │   │   ├── test_blueprint_from_intake.py
+│   │   │   ├── test_blueprint_schema.py
+│   │   │   ├── test_build.py
+│   │   │   ├── test_generated_auth_protected.py
+│   │   │   ├── test_generated_auth.py
+│   │   │   ├── test_generated_auth_route.py
+│   │   │   ├── test_git_agent.py
+│   │   │   ├── test_global_dashboard.py
+│   │   │   ├── test_global_dashboard_v2.py
+│   │   │   ├── test_health.py
+│   │   │   ├── test_hello_mod.py
+│   │   │   ├── test_hospial_webapp.py
+│   │   │   ├── test_hospital_apply_patches.py
+│   │   │   ├── test_hospital_codegen.py
+│   │   │   ├── test_i18n_api.py
+│   │   │   ├── test_i_need_an_app_to_play_chess.py
+│   │   │   ├── test_inventory_mod.py
+│   │   │   ├── test_math_mod.py
+│   │   │   ├── test_ml_dashboard.py
+│   │   │   ├── test_my_product_site.py
+│   │   │   ├── test_my_trips.py
+│   │   │   ├── test_ok.py
+│   │   │   ├── test_online_travel.py
+│   │   │   ├── test_packager_demo_mod.py
+│   │   │   ├── test_packager_multi_frontends.py
+│   │   │   ├── test_packager_node_backend.py
+│   │   │   ├── test_planning_agent.py
+│   │   │   ├── test_product_catalog_web_1.py
+│   │   │   ├── test_react_ml_demo.py
+│   │   │   ├── test_repo_summary.py
+│   │   │   ├── test_rls_sample.py
+│   │   │   ├── test_smoke.py
+│   │   │   ├── test_tasks_mod.py
+│   │   │   ├── test_tasks_service.py
+│   │   │   ├── test_team_dashboard_api.py
+│   │   │   ├── test_team_dashboard_pipeline_extra.py
+│   │   │   ├── test_team_dashboard.py
+│   │   │   ├── test_ui_scaffold_from_intake_locales.py
+│   │   │   ├── test_ui_scaffold_locales.py
+│   │   │   ├── test_ui_scaffold_react.py
+│   │   │   └── test_user_service.py
+│   │   ├── web
+│   │   │   ├── pages
+│   │   │   │   └── index.tsx
+│   │   │   ├── i18n.locales.json
+│   │   │   └── package.json
+│   │   ├── docker-compose.packaged.yml
+│   │   ├── Dockerfile_packaged
+│   │   ├── pyproject.toml
+│   │   ├── README.md
+│   │   ├── README_packaged.md
+│   │   └── requirements.txt
+│   ├── scripts
+│   │   └── verify_shop.sh
+│   ├── services
+│   │   ├── ai
+│   │   │   └── assistant.py
+│   │   ├── api
+│   │   │   ├── routes
+│   │   │   │   ├── ai
+│   │   │   │   ├── ai.py
+│   │   │   │   ├── assistant.py
+│   │   │   │   ├── auth.py
+│   │   │   │   ├── cart.py
+│   │   │   │   ├── health.py
+│   │   │   │   ├── i18n.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── orders.py
+│   │   │   │   ├── products.py
+│   │   │   │   └── rich.py
+│   │   │   ├── security
+│   │   │   │   └── headers.py
+│   │   │   ├── app.py
+│   │   │   ├── auth.py
+│   │   │   ├── db.py
+│   │   │   ├── __init__.py
+│   │   │   └── models.py
+│   │   ├── app_server
+│   │   │   ├── security
+│   │   │   │   └── headers.py
+│   │   │   ├── __init__.py
+│   │   │   └── main.py
+│   │   ├── node
+│   │   │   ├── app.js
+│   │   │   ├── package.json
+│   │   │   └── package-lock.json
+│   │   ├── __init__.py
+│   │   └── travel_api.py
+│   ├── tests
+│   │   └── test_shop_rbac.py
+│   ├── web
+│   │   ├── components
+│   │   │   └── Navbar.tsx
+│   │   ├── i18n
+│   │   │   └── messages.ts
+│   │   ├── lib
+│   │   │   ├── api.ts
+│   │   │   └── auth.tsx
+│   │   ├── pages
+│   │   │   ├── admin
+│   │   │   │   └── products.tsx
+│   │   │   ├── api
+│   │   │   │   ├── assistant
+│   │   │   │   ├── cart.ts
+│   │   │   │   └── products.ts
+│   │   │   ├── products
+│   │   │   │   └── [id].tsx
+│   │   │   ├── _app.tsx
+│   │   │   ├── assistant.tsx
+│   │   │   ├── bookings.tsx
+│   │   │   ├── checkout.tsx
+│   │   │   ├── flights.tsx
+│   │   │   ├── hotels.tsx
+│   │   │   ├── index.tsx
+│   │   │   ├── journeys.tsx
+│   │   │   ├── login.tsx
+│   │   │   ├── products.tsx
+│   │   │   └── search.tsx
+│   │   ├── styles
+│   │   │   └── globals.css
+│   │   ├── .env.local
+│   │   ├── next-env.d.ts
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   ├── postcss.config.js
+│   │   ├── tailwind.config.js
+│   │   └── tsconfig.json
+│   ├── hello_mod.py
+│   ├── __init__.py
+│   └── product_v1.db
+├── .github
+│   ├── workflows
+│   │   ├── auto-tag-and-release.yml
+│   │   ├── docker-publish.yml
+│   │   ├── docker.yml
+│   │   ├── ghcr-build.yml
+│   │   ├── lint-and-test.yml
+│   │   ├── lint.yml
+│   │   ├── pr-auto-approve-and-automerge.yml
+│   │   └── security-scan.yml
+│   └── CODEOWNERS
+├── .local
+│   └── velu
+│       ├── blueprints.sqlite3
+│       └── jobs.db
+├── local
+│   └── local_tasks.py
+├── migrations
+│   └── 001_init.sql
+├── monitoring
+│   ├── provisioning
+│   │   └── datasources
+│   │       ├── dashboards.yml
+│   │       ├── datasource.yml
+│   │       └── grafana-prometheus-datasource.yaml
+│   ├── alerts.yml
+│   ├── prom_basic_pass.txt
+│   ├── prom_basic_pass.txt.example
+│   └── prometheus.yml
+├── .mypy_cache
+│   ├── 3.12
+│   │   ├── agents
+│   │   │   ├── architecture_agent.data.json
+│   │   │   ├── architecture_agent.meta.json
+│   │   │   ├── build_agent.data.json
+│   │   │   ├── build_agent.meta.json
+│   │   │   ├── codegen_agent.data.json
+│   │   │   ├── codegen_agent.meta.json
+│   │   │   ├── debug_agent.data.json
+│   │   │   ├── debug_agent.meta.json
+│   │   │   ├── deploy_agent.data.json
+│   │   │   ├── deploy_agent.meta.json
+│   │   │   ├── executor_agent.data.json
+│   │   │   ├── executor_agent.meta.json
+│   │   │   ├── __init__.data.json
+│   │   │   ├── __init__.meta.json
+│   │   │   ├── planning_agent.data.json
+│   │   │   ├── planning_agent.meta.json
+│   │   │   ├── security_agent.data.json
+│   │   │   ├── security_agent.meta.json
+│   │   │   ├── ui_agent.data.json
+│   │   │   └── ui_agent.meta.json
+│   │   ├── collections
+│   │   │   ├── abc.data.json
+│   │   │   ├── abc.meta.json
+│   │   │   ├── __init__.data.json
+│   │   │   └── __init__.meta.json
+│   │   ├── email
+│   │   │   ├── charset.data.json
+│   │   │   ├── charset.meta.json
+│   │   │   ├── contentmanager.data.json
+│   │   │   ├── contentmanager.meta.json
+│   │   │   ├── errors.data.json
+│   │   │   ├── errors.meta.json
+│   │   │   ├── header.data.json
+│   │   │   ├── header.meta.json
+│   │   │   ├── __init__.data.json
+│   │   │   ├── __init__.meta.json
+│   │   │   ├── message.data.json
+│   │   │   ├── message.meta.json
+│   │   │   ├── _policybase.data.json
+│   │   │   ├── _policybase.meta.json
+│   │   │   ├── policy.data.json
+│   │   │   └── policy.meta.json
+│   │   ├── importlib
+│   │   │   ├── metadata
+│   │   │   │   ├── __init__.data.json
+│   │   │   │   ├── __init__.meta.json
+│   │   │   │   ├── _meta.data.json
+│   │   │   │   └── _meta.meta.json
+│   │   │   ├── resources
+│   │   │   │   ├── abc.data.json
+│   │   │   │   ├── abc.meta.json
+│   │   │   │   ├── __init__.data.json
+│   │   │   │   └── __init__.meta.json
+│   │   │   ├── _abc.data.json
+│   │   │   ├── abc.data.json
+│   │   │   ├── _abc.meta.json
+│   │   │   ├── abc.meta.json
+│   │   │   ├── __init__.data.json
+│   │   │   ├── __init__.meta.json
+│   │   │   ├── machinery.data.json
+│   │   │   ├── machinery.meta.json
+│   │   │   ├── readers.data.json
+│   │   │   └── readers.meta.json
+│   │   ├── json
+│   │   │   ├── decoder.data.json
+│   │   │   ├── decoder.meta.json
+│   │   │   ├── encoder.data.json
+│   │   │   ├── encoder.meta.json
+│   │   │   ├── __init__.data.json
+│   │   │   └── __init__.meta.json
+│   │   ├── orchestrator
+│   │   │   ├── agent_contracts.data.json
+│   │   │   ├── agent_contracts.meta.json
+│   │   │   ├── cli.data.json
+│   │   │   ├── cli.meta.json
+│   │   │   ├── __init__.data.json
+│   │   │   ├── __init__.meta.json
+│   │   │   ├── router_client.data.json
+│   │   │   ├── router_client.meta.json
+│   │   │   ├── state_manager.data.json
+│   │   │   ├── state_manager.meta.json
+│   │   │   ├── task_scheduler.data.json
+│   │   │   └── task_scheduler.meta.json
+│   │   ├── os
+│   │   │   ├── __init__.data.json
+│   │   │   ├── __init__.meta.json
+│   │   │   ├── path.data.json
+│   │   │   └── path.meta.json
+│   │   ├── services
+│   │   │   ├── app_server
+│   │   │   │   ├── auth.data.json
+│   │   │   │   ├── auth.meta.json
+│   │   │   │   ├── store.data.json
+│   │   │   │   ├── store.meta.json
+│   │   │   │   ├── store_sqlite.data.json
+│   │   │   │   └── store_sqlite.meta.json
+│   │   │   ├── model_router
+│   │   │   │   ├── __init__.data.json
+│   │   │   │   ├── __init__.meta.json
+│   │   │   │   ├── registry.data.json
+│   │   │   │   └── registry.meta.json
+│   │   │   ├── policy_engine
+│   │   │   │   ├── engine.data.json
+│   │   │   │   ├── engine.meta.json
+│   │   │   │   ├── __init__.data.json
+│   │   │   │   └── __init__.meta.json
+│   │   │   ├── queue
+│   │   │   │   ├── sqlite_queue.data.json
+│   │   │   │   └── sqlite_queue.meta.json
+│   │   │   ├── worker
+│   │   │   │   ├── main.data.json
+│   │   │   │   └── main.meta.json
+│   │   │   ├── app_server.data.json
+│   │   │   ├── app_server.meta.json
+│   │   │   ├── __init__.data.json
+│   │   │   ├── __init__.meta.json
+│   │   │   ├── queue.data.json
+│   │   │   ├── queue.meta.json
+│   │   │   ├── worker.data.json
+│   │   │   └── worker.meta.json
+│   │   ├── sqlite3
+│   │   │   ├── dbapi2.data.json
+│   │   │   ├── dbapi2.meta.json
+│   │   │   ├── __init__.data.json
+│   │   │   └── __init__.meta.json
+│   │   ├── sys
+│   │   │   ├── __init__.data.json
+│   │   │   ├── __init__.meta.json
+│   │   │   ├── _monitoring.data.json
+│   │   │   └── _monitoring.meta.json
+│   │   ├── _typeshed
+│   │   │   ├── __init__.data.json
+│   │   │   └── __init__.meta.json
+│   │   ├── zipfile
+│   │   │   ├── __init__.data.json
+│   │   │   ├── __init__.meta.json
+│   │   │   ├── _path.data.json
+│   │   │   └── _path.meta.json
+│   │   ├── abc.data.json
+│   │   ├── abc.meta.json
+│   │   ├── agents.data.json
+│   │   ├── agents.meta.json
+│   │   ├── argparse.data.json
+│   │   ├── argparse.meta.json
+│   │   ├── _ast.data.json
+│   │   ├── _ast.meta.json
+│   │   ├── builtins.data.json
+│   │   ├── builtins.meta.json
+│   │   ├── _codecs.data.json
+│   │   ├── codecs.data.json
+│   │   ├── _codecs.meta.json
+│   │   ├── codecs.meta.json
+│   │   ├── _collections_abc.data.json
+│   │   ├── _collections_abc.meta.json
+│   │   ├── contextlib.data.json
+│   │   ├── contextlib.meta.json
+│   │   ├── dataclasses.data.json
+│   │   ├── dataclasses.meta.json
+│   │   ├── datetime.data.json
+│   │   ├── datetime.meta.json
+│   │   ├── enum.data.json
+│   │   ├── enum.meta.json
+│   │   ├── __future__.data.json
+│   │   ├── __future__.meta.json
+│   │   ├── genericpath.data.json
+│   │   ├── genericpath.meta.json
+│   │   ├── io.data.json
+│   │   ├── io.meta.json
+│   │   ├── main.data.json
+│   │   ├── main.meta.json
+│   │   ├── pathlib.data.json
+│   │   ├── pathlib.meta.json
+│   │   ├── @plugins_snapshot.json
+│   │   ├── posixpath.data.json
+│   │   ├── posixpath.meta.json
+│   │   ├── re.data.json
+│   │   ├── re.meta.json
+│   │   ├── resource.data.json
+│   │   ├── resource.meta.json
+│   │   ├── sre_compile.data.json
+│   │   ├── sre_compile.meta.json
+│   │   ├── sre_constants.data.json
+│   │   ├── sre_constants.meta.json
+│   │   ├── sre_parse.data.json
+│   │   ├── sre_parse.meta.json
+│   │   ├── subprocess.data.json
+│   │   ├── subprocess.meta.json
+│   │   ├── time.data.json
+│   │   ├── time.meta.json
+│   │   ├── types.data.json
+│   │   ├── types.meta.json
+│   │   ├── typing.data.json
+│   │   ├── typing_extensions.data.json
+│   │   ├── typing_extensions.meta.json
+│   │   └── typing.meta.json
+│   ├── CACHEDIR.TAG
+│   └── .gitignore
+├── ops
+│   ├── ci-cd
+│   │   ├── build.yml
+│   │   ├── security-scan.yml
+│   │   └── test.yml
+│   ├── config
+│   ├── docker
+│   │   ├── api.Dockerfile
+│   │   ├── model-router.Dockerfile
+│   │   ├── orchestrator.Dockerfile
+│   │   ├── policy-engine.Dockerfile
+│   │   └── worker.Dockerfile
+│   ├── k8s
+│   │   ├── model-router.yaml
+│   │   ├── orchestrator.yaml
+│   │   └── policy-engine.yaml
+│   ├── bootstrap_db.py
+│   ├── data_init.sh
+│   ├── __init__.py
+│   ├── load_bootstrap_env.py
+│   └── velu-debug.sh
+├── orchestrator
+│   ├── agent_contracts.py
+│   ├── cli.py
+│   ├── __init__.py
+│   ├── router_client.py
+│   ├── state_manager.py
+│   └── task_scheduler.py
+├── .pytest_cache
+│   ├── v
+│   │   └── cache
+│   │       ├── lastfailed
+│   │       └── nodeids
+│   ├── CACHEDIR.TAG
+│   ├── .gitignore
+│   └── README.md
+├── react_spa
+│   ├── src
+│   │   ├── api.js
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── i18n.locales.json
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
+├── .ruff_cache
+│   ├── 0.13.2
+│   │   ├── 10349704053091974493
+│   │   ├── 10650947774312540284
+│   │   ├── 10679522840663433731
+│   │   ├── 10738168055487772677
+│   │   ├── 11026198010772572490
+│   │   ├── 11031980454798718806
+│   │   ├── 111016352743368795
+│   │   ├── 11339173174600734758
+│   │   ├── 11513128804365051582
+│   │   ├── 115611671824336895
+│   │   ├── 11617175138061550742
+│   │   ├── 11653481764422604201
+│   │   ├── 11741663598246284691
+│   │   ├── 11916416025035869969
+│   │   ├── 11996340875862403426
+│   │   ├── 12030011452130273623
+│   │   ├── 12150708341283210275
+│   │   ├── 12250671833036985505
+│   │   ├── 12307776554205461894
+│   │   ├── 12669120416534711786
+│   │   ├── 12900881136817786612
+│   │   ├── 12911878737025370495
+│   │   ├── 13260014874340144537
+│   │   ├── 13317895007949020591
+│   │   ├── 13412091047384105260
+│   │   ├── 13645373557872279400
+│   │   ├── 14262859384865493128
+│   │   ├── 14316081142988829110
+│   │   ├── 14420329197746671510
+│   │   ├── 14432444904840369339
+│   │   ├── 14675133197221838225
+│   │   ├── 14720731491690341051
+│   │   ├── 14823733427887889255
+│   │   ├── 15262017853977863435
+│   │   ├── 15342497651026250423
+│   │   ├── 1537060336212965783
+│   │   ├── 15411115946814851744
+│   │   ├── 15422393045839403622
+│   │   ├── 15527770680578961119
+│   │   ├── 15544488009179976673
+│   │   ├── 15610978802388876202
+│   │   ├── 16191355620063717317
+│   │   ├── 16204072177189607090
+│   │   ├── 16211320041170476248
+│   │   ├── 16224027402745353468
+│   │   ├── 16267944922793535572
+│   │   ├── 16275490402010760021
+│   │   ├── 16386087782857722990
+│   │   ├── 16458417308144164875
+│   │   ├── 16482509656210246474
+│   │   ├── 16691390797602394022
+│   │   ├── 16881414739143697210
+│   │   ├── 16900901696045743759
+│   │   ├── 1701219115686088701
+│   │   ├── 17209508129387182676
+│   │   ├── 17264637213702578111
+│   │   ├── 17295307538167248385
+│   │   ├── 17357352004133606598
+│   │   ├── 17513892745923565647
+│   │   ├── 1752425460029061
+│   │   ├── 17694666185374790078
+│   │   ├── 18064740520110560357
+│   │   ├── 18217878426640003327
+│   │   ├── 18403315937454336761
+│   │   ├── 2336018035141555811
+│   │   ├── 24072543430562606
+│   │   ├── 2540723818488074836
+│   │   ├── 2707533507418405979
+│   │   ├── 2769376934790033821
+│   │   ├── 28229017276915628
+│   │   ├── 3803361993688830512
+│   │   ├── 3911685577057187763
+│   │   ├── 4014796279139944387
+│   │   ├── 4034905386292616192
+│   │   ├── 4100828081937564877
+│   │   ├── 4275021491363080067
+│   │   ├── 4337324471388247047
+│   │   ├── 4686122543154544215
+│   │   ├── 4749572769569529222
+│   │   ├── 4792202157585116989
+│   │   ├── 503965225416659426
+│   │   ├── 5403934268618415746
+│   │   ├── 545423641475942125
+│   │   ├── 546899862359757276
+│   │   ├── 5537539451527006495
+│   │   ├── 5754445058953613488
+│   │   ├── 6106279734904050428
+│   │   ├── 6138973538301327748
+│   │   ├── 6504988623363316132
+│   │   ├── 6715815078783124643
+│   │   ├── 7179333530259407291
+│   │   ├── 7202377269460632801
+│   │   ├── 755803621356308134
+│   │   ├── 7815554286643746874
+│   │   ├── 8139307003699385304
+│   │   ├── 8740869480568341046
+│   │   ├── 8803699219390943800
+│   │   ├── 8997819949713672395
+│   │   ├── 9032210299511327588
+│   │   ├── 9115679066647803993
+│   │   ├── 9840645588495558321
+│   │   ├── 9927745340972897441
+│   │   ├── 9964453462338499547
+│   │   ├── 9970068796810653201
+│   │   ├── 9978359014446700418
+│   │   ├── 9985567978377073567
+│   │   └── 9994843410149767515
+│   ├── 0.14.0
+│   │   ├── 10099585436807475342
+│   │   ├── 10158084496932002500
+│   │   ├── 10200170780841611085
+│   │   ├── 10647405279800442853
+│   │   ├── 10760346416560016135
+│   │   ├── 10868688392911871047
+│   │   ├── 1096625814677152065
+│   │   ├── 11000512855960568790
+│   │   ├── 11026198010772572490
+│   │   ├── 11139429466636297302
+│   │   ├── 11273807961093745076
+│   │   ├── 11334739986120065418
+│   │   ├── 11339173174600734758
+│   │   ├── 11475314951407709192
+│   │   ├── 1150860107042420108
+│   │   ├── 11603284050639077498
+│   │   ├── 11625469882734336625
+│   │   ├── 11741663598246284691
+│   │   ├── 11951262904060922619
+│   │   ├── 12442743583389068740
+│   │   ├── 12457001260857261384
+│   │   ├── 12637660173860411422
+│   │   ├── 12644830744231778876
+│   │   ├── 12832047086528159038
+│   │   ├── 13050217206756506384
+│   │   ├── 13062384154745957183
+│   │   ├── 13375570952704844657
+│   │   ├── 13437479440001892755
+│   │   ├── 13457232487126117143
+│   │   ├── 13550966844705162345
+│   │   ├── 13573486758197518216
+│   │   ├── 13645373557872279400
+│   │   ├── 13725239494541880677
+│   │   ├── 13748656015949049104
+│   │   ├── 13879595118389086197
+│   │   ├── 13984404517447250953
+│   │   ├── 14116800554466462759
+│   │   ├── 14263360109693924365
+│   │   ├── 1433513926359487499
+│   │   ├── 1471784865696868180
+│   │   ├── 14838192778071163414
+│   │   ├── 1487149392835617592
+│   │   ├── 15204128025905481164
+│   │   ├── 15241245837440384345
+│   │   ├── 15557846545556973766
+│   │   ├── 15672494183672217927
+│   │   ├── 15780683131762609066
+│   │   ├── 15871866166162378986
+│   │   ├── 1610461323146932752
+│   │   ├── 16135960165941998456
+│   │   ├── 16217425428177651851
+│   │   ├── 1630373957864104756
+│   │   ├── 16322439149252595440
+│   │   ├── 16438105343485819209
+│   │   ├── 16453805199662443925
+│   │   ├── 16500032489182220769
+│   │   ├── 16549110416273290567
+│   │   ├── 16572262102387421219
+│   │   ├── 16579030841709743476
+│   │   ├── 16691390797602394022
+│   │   ├── 1671847959939906731
+│   │   ├── 16777013073341173647
+│   │   ├── 16826758047859609751
+│   │   ├── 16881414739143697210
+│   │   ├── 17003315303798630959
+│   │   ├── 17092863559696300765
+│   │   ├── 17249363635051996729
+│   │   ├── 1738878160333990125
+│   │   ├── 1744623147007754725
+│   │   ├── 17486463276371047499
+│   │   ├── 17498399074532368981
+│   │   ├── 17768296321915759528
+│   │   ├── 18057739549168529328
+│   │   ├── 18185931847660259585
+│   │   ├── 18325499280635185974
+│   │   ├── 2225679115409412230
+│   │   ├── 241772470247100684
+│   │   ├── 2576712945670827827
+│   │   ├── 2668941072166817675
+│   │   ├── 28229017276915628
+│   │   ├── 3017866390275994734
+│   │   ├── 3135588639228509785
+│   │   ├── 3179469505240995196
+│   │   ├── 3208069750055844918
+│   │   ├── 3334358035341771364
+│   │   ├── 3492907212749164045
+│   │   ├── 3557671005692957169
+│   │   ├── 3557961530181586804
+│   │   ├── 3827594449823242611
+│   │   ├── 3984161046404546157
+│   │   ├── 4482826103518345354
+│   │   ├── 4536220267530255957
+│   │   ├── 4738556963411314977
+│   │   ├── 4934606602183332994
+│   │   ├── 5079605744689460577
+│   │   ├── 5258240761949278442
+│   │   ├── 5305091125875301078
+│   │   ├── 5403934268618415746
+│   │   ├── 546899862359757276
+│   │   ├── 5719569557876512861
+│   │   ├── 584080017124888549
+│   │   ├── 6174964181842473083
+│   │   ├── 6297808462410223431
+│   │   ├── 6560144588625147143
+│   │   ├── 6592306641040464727
+│   │   ├── 6835634432774467068
+│   │   ├── 6913699506453249617
+│   │   ├── 6983371533873150475
+│   │   ├── 7021713226125798861
+│   │   ├── 7040000038420257246
+│   │   ├── 7177025124085757483
+│   │   ├── 7343397505706936409
+│   │   ├── 7417264040477392151
+│   │   ├── 7523535137555125516
+│   │   ├── 755803621356308134
+│   │   ├── 7566931446361627627
+│   │   ├── 7667914045182699130
+│   │   ├── 7792673500512751589
+│   │   ├── 7835736238857402605
+│   │   ├── 7884772817127879305
+│   │   ├── 8060853627667003896
+│   │   ├── 8173809125646523174
+│   │   ├── 8198014928580684111
+│   │   ├── 8334882851377319784
+│   │   ├── 842237352969833855
+│   │   ├── 8636030131447300832
+│   │   ├── 8673448847817363868
+│   │   ├── 8983375922895101925
+│   │   ├── 918520672597346613
+│   │   ├── 928222657148892157
+│   │   ├── 9483233441456705194
+│   │   └── 9927023050269028236
+│   ├── 0.6.3
+│   │   ├── 12321964438526412992
+│   │   ├── 12337792435689686702
+│   │   ├── 14438435356828644426
+│   │   ├── 14843272410317615919
+│   │   ├── 15943812818208322751
+│   │   ├── 16523579330605227979
+│   │   ├── 2947722806345376996
+│   │   └── 5075987884117853538
+│   ├── 0.6.4
+│   │   ├── 11842500141448119034
+│   │   ├── 1327476887946301357
+│   │   ├── 15361744899760601542
+│   │   ├── 3285746270908929909
+│   │   ├── 3807764113151020695
+│   │   └── 8934759815415656562
+│   ├── 0.6.9
+│   │   ├── 10701945066866275098
+│   │   ├── 10809365070576831992
+│   │   ├── 11096664958299337945
+│   │   ├── 11118250113439978938
+│   │   ├── 1160520604073160696
+│   │   ├── 12392482842768477372
+│   │   ├── 12489519090349229244
+│   │   ├── 12533428425409425272
+│   │   ├── 12846929071264201167
+│   │   ├── 13190807605713927991
+│   │   ├── 13485351121686411632
+│   │   ├── 13905318000805734771
+│   │   ├── 14048526003387766170
+│   │   ├── 14883643122151728681
+│   │   ├── 15363975482620592222
+│   │   ├── 15405001069410413510
+│   │   ├── 15769811914174495084
+│   │   ├── 15798907873178349038
+│   │   ├── 16095779469777884570
+│   │   ├── 17093037551860347962
+│   │   ├── 1740831570256369562
+│   │   ├── 2271866207401350556
+│   │   ├── 3523116027434488355
+│   │   ├── 3599795352376985682
+│   │   ├── 3983632786064072790
+│   │   ├── 4471725535793668431
+│   │   ├── 4770312018332720690
+│   │   ├── 7613270463825837329
+│   │   ├── 8714078016623591629
+│   │   └── 9320854750411139928
+│   ├── CACHEDIR.TAG
+│   └── .gitignore
+├── .run
+│   ├── jobs.db
+│   ├── jobs.db-shm
+│   ├── tasks.jsonl
+│   ├── tasks.log
+│   └── worker.log
+├── scripts
+│   ├── apply_result_files.py
+│   ├── audit.sh
+│   ├── cycle.sh
+│   ├── gen_tree.py
+│   ├── lint.sh
+│   ├── migrate.sh
+│   ├── mint_jwt.py
+│   ├── print_metrics.sh
+│   ├── pytest_local.sh
+│   ├── run.sh
+│   ├── setup.sh
+│   ├── smoke.sh
+│   ├── sqlite_backup.py
+│   ├── submit_task.py
+│   ├── submit_task.sh
+│   ├── test_open.sh
+│   ├── test_pg.sh
+│   └── test.sh
+├── services
+│   ├── agents
+│   │   ├── aggregate.py
+│   │   ├── ai_architect.py
+│   │   ├── ai_features.py
+│   │   ├── analyzer.py
+│   │   ├── api_design.py
+│   │   ├── architecture.py
+│   │   ├── assistant_intake.py
+│   │   ├── autodev.py
+│   │   ├── backend_scaffold.py
+│   │   ├── blueprint_editor.py
+│   │   ├── blueprint_history.py
+│   │   ├── chatbot_embed.py
+│   │   ├── chat.py
+│   │   ├── codegen.py
+│   │   ├── code_refiner.py
+│   │   ├── content_generator.py
+│   │   ├── datamodel.py
+│   │   ├── db_schema_optimizer.py
+│   │   ├── debug_pipeline.py
+│   │   ├── echo.py
+│   │   ├── executor.py
+│   │   ├── gitcommit.py
+│   │   ├── hospital_apply_patches.py
+│   │   ├── hospital_codegen.py
+│   │   ├── __init__.py
+│   │   ├── intake.py
+│   │   ├── intake_rules.py
+│   │   ├── language_detector.py
+│   │   ├── lint.py
+│   │   ├── mobile_scaffold.py
+│   │   ├── packager.py
+│   │   ├── pipeline.py
+│   │   ├── planner.py
+│   │   ├── plan.py
+│   │   ├── postdeploy_checks.py
+│   │   ├── reporter.py
+│   │   ├── report.py
+│   │   ├── repo_summary.py
+│   │   ├── requirements.py
+│   │   ├── runtime_command_planner.py
+│   │   ├── runtime_planner.py
+│   │   ├── runtime_recipe.py
+│   │   ├── runtime_script_writer.py
+│   │   ├── security_hardening.py
+│   │   ├── tester.py
+│   │   ├── test_fix_assistant.py
+│   │   ├── testgen.py
+│   │   └── ui_scaffold.py
+│   ├── ai
+│   │   └── assistant.py
+│   ├── api
+│   │   ├── routes
+│   │   │   ├── ai.py
+│   │   │   ├── health.py
+│   │   │   └── users.py
+│   │   ├── app.py
+│   │   └── db.py
+│   ├── app_server
+│   │   ├── dependencies
+│   │   │   ├── __init__.py
+│   │   │   ├── plan.py
+│   │   │   └── scopes.py
+│   │   ├── models
+│   │   │   └── api_key.py
+│   │   ├── routes
+│   │   │   ├── assistant.py
+│   │   │   ├── billing.py
+│   │   │   ├── blueprints.py
+│   │   │   ├── i18n.py
+│   │   │   ├── __init__.py
+│   │   │   ├── jobs.py
+│   │   │   └── orgs.py
+│   │   ├── schemas
+│   │   │   ├── blueprint_factory.py
+│   │   │   ├── blueprint.py
+│   │   │   ├── intake.py
+│   │   │   ├── runtime.py
+│   │   │   └── saas.py
+│   │   ├── security
+│   │   │   └── headers.py
+│   │   ├── templates
+│   │   │   ├── submit.html
+│   │   │   └── tasks.html
+│   │   ├── admin.py
+│   │   ├── auth.py
+│   │   ├── blueprints_sqlite.py
+│   │   ├── main.py
+│   │   ├── main.py.bak2
+│   │   ├── main.py.bak.latency_alias
+│   │   ├── main.py.bak.metrics
+│   │   ├── main.py.bak.metrics_fix
+│   │   ├── middleware.py
+│   │   ├── saas_auth.py
+│   │   ├── saas_http.py
+│   │   ├── saas_registry.py
+│   │   ├── store.py
+│   │   ├── store.py.bak.ts
+│   │   ├── store_sqlite.py
+│   │   └── worker.py
+│   ├── auth
+│   │   └── api_keys.py
+│   ├── billing
+│   │   └── accounts.py
+│   ├── console
+│   │   ├── cli.py
+│   │   ├── debug_runner.py
+│   │   ├── __init__.py
+│   │   ├── runtime_plan_cli.py
+│   │   └── runtime_runner.py
+│   ├── db
+│   │   ├── migrations
+│   │   │   ├── 001_init_extensions.sql
+│   │   │   ├── 002_billing_accounts.sql
+│   │   │   ├── 002_multitenant_core.sql
+│   │   │   ├── 003_seed_system_roles.sql
+│   │   │   ├── 006_api_keys_admin.sql
+│   │   │   ├── 007_jobs_v2_actor.sql
+│   │   │   ├── 008_api_keys_expires_at.sql
+│   │   │   └── 20251221_add_org_plan.sql
+│   │   ├── __init__.py
+│   │   ├── migrate.py
+│   │   └── resolve.py
+│   ├── feedback-monitor
+│   │   ├── analyzer.py
+│   │   ├── __init__.py
+│   │   └── monitor.py
+│   ├── llm
+│   │   ├── client.py
+│   │   ├── __init__.py
+│   │   └── remote_client.py
+│   ├── middleware
+│   │   └── auth_context.py
+│   ├── model_router
+│   │   ├── model-router
+│   │   │   ├── __init__.py
+│   │   │   ├── registry.json
+│   │   │   ├── registry.py
+│   │   │   └── router.py
+│   │   ├── __init__.py
+│   │   └── registry.py
+│   ├── plugins
+│   │   ├── catalog.py
+│   │   └── __init__.py
+│   ├── policy_engine
+│   │   ├── policy-engine
+│   │   │   ├── engine.py
+│   │   │   ├── __init__.py
+│   │   │   └── ruleset_schema.json
+│   │   ├── engine.py
+│   │   └── __init__.py
+│   ├── queue
+│   │   ├── __init__.py
+│   │   ├── jobs_postgres.py
+│   │   ├── jobs.py
+│   │   ├── jobs_sqlite.py
+│   │   ├── pg_queue.py
+│   │   ├── queue_api.py
+│   │   ├── sqlite_queue.py
+│   │   ├── standalone_worker.py
+│   │   └── worker_entry.py
+│   ├── worker
+│   │   ├── git_tasks.py
+│   │   ├── __init__.py
+│   │   └── main.py
+│   ├── agents_legacy.py
+│   └── __init__.py
+├── src
+│   ├── UNKNOWN.egg-info
+│   │   ├── dependency_links.txt
+│   │   ├── PKG-INFO
+│   │   ├── SOURCES.txt
+│   │   └── top_level.txt
+│   ├── velu.egg-info
+│   │   ├── dependency_links.txt
+│   │   ├── PKG-INFO
+│   │   ├── SOURCES.txt
+│   │   └── top_level.txt
+│   ├── account_codegen.py
+│   ├── account_models.py
+│   ├── acme_travel.py
+│   ├── ai_demo.py
+│   ├── big_app2.py
+│   ├── big_app.py
+│   ├── blog_mod.py
+│   ├── build.py
+│   ├── car_car.py
+│   ├── car_mine.py
+│   ├── console_app.py
+│   ├── cool_car.py
+│   ├── cool_car_v2.py
+│   ├── cool_car_v4.py
+│   ├── cool_car_v5.py
+│   ├── dark_mode.py
+│   ├── electronics_store.py
+│   ├── global_dashboard.py
+│   ├── global_dashboard_v2.py
+│   ├── hanppiness_app.py
+│   ├── hello_mod.py
+│   ├── hospial_webapp.py
+│   ├── i_need_an_app_to_play_chess.py
+│   ├── __init__.py
+│   ├── inventory_mod.py
+│   ├── inventory_service.py
+│   ├── landing_sync.py
+│   ├── math_mod.py
+│   ├── ml_dashboard.py
+│   ├── multi_tenant.py
+│   ├── multi_tenant_v2.py
+│   ├── my_books.py
+│   ├── my_cars.py
+│   ├── my_car_v8.py
+│   ├── my_client_shop.py
+│   ├── my_family.py
+│   ├── my_kids.py
+│   ├── my_mobile_shop_clean.py
+│   ├── my_mobile_shop.py
+│   ├── my_my.py
+│   ├── my_my_v2.py
+│   ├── my_my_v3.py
+│   ├── my_my_v4.py
+│   ├── my_product_site.py
+│   ├── my_products.py
+│   ├── my_pro_v5.py
+│   ├── my_team_v2.py
+│   ├── my_trips.py
+│   ├── off_road.py
+│   ├── ok.py
+│   ├── online_travel.py
+│   ├── packager_demo_mod.py
+│   ├── play_chess.py
+│   ├── product_catalog_web_1.py
+│   ├── product_catalog_web_2.py
+│   ├── product.py
+│   ├── product_v1.py
+│   ├── react_ml_demo.py
+│   ├── repo_summary.py
+│   ├── shop_fastapi_next.py
+│   ├── simple_website.py
+│   ├── tasks_mod.py
+│   ├── tasks_service.py
+│   ├── team_dashboard.py
+│   ├── team_work.py
+│   ├── t_shirt_app.py
+│   ├── tshirt_shop.py
+│   ├── tshirt_shop_v2.py
+│   ├── user_service.py
+│   ├── velu_console_assistant.py
+│   ├── velu_demo_shop.py
+│   ├── velu_demo_shop_v2.py
+│   ├── velu_demo_shop_v3.py
+│   ├── velu_demo_shop_v4.py
+│   ├── velu_dev.py
+│   └── web_web.py
+├── templates
+│   ├── fastapi_app.py.j2
+│   ├── next_index.tsx.j2
+│   ├── README_client_template.md
+│   ├── router_stub.py.j2
+│   └── test_smoke.py.j2
+├── tests
+│   ├── integration
+│   │   ├── __init__.py
+│   │   ├── test_admin_api_keys_postgres.py
+│   │   ├── test_api_key_scopes_postgres.py
+│   │   ├── test_api.py
+│   │   ├── test_auth.py
+│   │   ├── test_jobs_api_postgres.py
+│   │   ├── test_ready.py
+│   │   ├── test_repo_summary_task.py
+│   │   ├── test_router_policy.py
+│   │   ├── test_security.py
+│   │   ├── test_store_sqlite.py
+│   │   └── test_worker.py
+│   ├── performance
+│   │   └── __init__.py
+│   ├── .pytest_cache
+│   │   ├── v
+│   │   │   └── cache
+│   │   │       ├── lastfailed
+│   │   │       └── nodeids
+│   │   ├── CACHEDIR.TAG
+│   │   ├── .gitignore
+│   │   └── README.md
+│   ├── security
+│   │   └── __init__.py
+│   ├── unit
+│   │   ├── __init__.py
+│   │   ├── test_api_db_config.py
+│   │   ├── test_backend_scaffold_multi_backend.py
+│   │   ├── test_codegen.py
+│   │   ├── test_repo_summary_agent.py
+│   │   ├── test_repo_summary_excludes.py
+│   │   ├── test_repo_summary.py
+│   │   ├── test_scopes_dependency.py
+│   │   ├── test_store_ts_compat.py
+│   │   └── test_worker_router_contract.py
+│   ├── conftest.py
+│   ├── __init__.py
+│   ├── pytest.ini
+│   ├── pytest.ini.bak
+│   ├── requirements.txt
+│   ├── test_acme_travel.py
+│   ├── test_ai_architect.py
+│   ├── test_ai_assistants_docs_examples.py
+│   ├── test_ai_demo_pipeline_extra.py
+│   ├── test_ai_demo.py
+│   ├── test_assistant_api.py
+│   ├── test_assistant_intake.py
+│   ├── test_assistant_pipeline.py
+│   ├── test_big_app2.py
+│   ├── test_big_app.py
+│   ├── test_blog_mod.py
+│   ├── test_blueprint_api.py
+│   ├── test_blueprint_catalog.py
+│   ├── test_blueprint_design_api.py
+│   ├── test_blueprint_editor.py
+│   ├── test_blueprint_from_hospital_spec.py
+│   ├── test_blueprint_from_intake.py
+│   ├── test_blueprint_history.py
+│   ├── test_blueprint_schema.py
+│   ├── test_build.py
+│   ├── test_car_car.py
+│   ├── test_car_mine.py
+│   ├── test_chatbot_embed.py
+│   ├── test_cli_basic.py
+│   ├── test_code_refiner.py
+│   ├── test_console_app.py
+│   ├── test_content_generator_messages.py
+│   ├── test_content_generator.py
+│   ├── test_cool_car.py
+│   ├── test_cool_car_v2.py
+│   ├── test_cool_car_v4.py
+│   ├── test_cool_car_v5.py
+│   ├── test_dark_mode.py
+│   ├── test_db_schema_optimizer.py
+│   ├── test_debug_pipeline.py
+│   ├── test_electronics_store.py
+│   ├── test_generated_auth_protected.py
+│   ├── test_generated_auth.py
+│   ├── test_generated_auth_route.py
+│   ├── test_git_agent.py
+│   ├── test_global_dashboard.py
+│   ├── test_global_dashboard_v2.py
+│   ├── test_hanppiness_app.py
+│   ├── test_health.py
+│   ├── test_hello_mod.py
+│   ├── test_hospial_webapp.py
+│   ├── test_hospital_apply_patches.py
+│   ├── test_hospital_codegen.py
+│   ├── test_i18n_api.py
+│   ├── test_i18n_negotiation.py
+│   ├── test_i18n_translate.py
+│   ├── test_i_need_an_app_to_play_chess.py
+│   ├── test_intake_rules.py
+│   ├── test_inventory_mod.py
+│   ├── test_language_detector.py
+│   ├── test_math_mod.py
+│   ├── test_ml_dashboard.py
+│   ├── test_mobile_scaffold.py
+│   ├── test_multilingual_pipeline.py
+│   ├── test_multistack_blueprints_examples.py
+│   ├── test_multi_tenant.py
+│   ├── test_multi_tenant_v2.py
+│   ├── test_my_books.py
+│   ├── test_my_cars.py
+│   ├── test_my_car_v8.py
+│   ├── test_my_client_shop.py
+│   ├── test_my_family.py
+│   ├── test_my_kids.py
+│   ├── test_my_mobile_shop_clean.py
+│   ├── test_my_mobile_shop.py
+│   ├── test_my_my.py
+│   ├── test_my_my_v2.py
+│   ├── test_my_my_v3.py
+│   ├── test_my_my_v4.py
+│   ├── test_my_product_site.py
+│   ├── test_my_products.py
+│   ├── test_my_pro_v5.py
+│   ├── test_my_team_v2.py
+│   ├── test_my_trips.py
+│   ├── test_off_road.py
+│   ├── test_ok.py
+│   ├── test_online_travel.py
+│   ├── test_orgs_bootstrap_keys.py
+│   ├── test_packager_demo_mod.py
+│   ├── test_packager_mobile.py
+│   ├── test_packager_multi_frontends.py
+│   ├── test_packager_node_backend.py
+│   ├── test_planning_agent.py
+│   ├── test_play_chess.py
+│   ├── test_product_catalog_web_1.py
+│   ├── test_product_catalog_web_2.py
+│   ├── test_product.py
+│   ├── test_product_v1.py
+│   ├── test_react_ml_demo.py
+│   ├── test_repo_summary.py
+│   ├── test_rich_features_geo.py
+│   ├── test_rich_features_uploads.py
+│   ├── test_rls_sample.py
+│   ├── test_runtime_command_planner.py
+│   ├── test_runtime_end_to_end.py
+│   ├── test_runtime_mobile.py
+│   ├── test_runtime_plan_cli.py
+│   ├── test_runtime_planner.py
+│   ├── test_runtime_recipe.py
+│   ├── test_runtime_runner.py
+│   ├── test_runtime_script_writer.py
+│   ├── test_saas_auth.py
+│   ├── test_saas_http_auth.py
+│   ├── test_saas_models.py
+│   ├── test_saas_registry.py
+│   ├── test_shop_fastapi_next.py
+│   ├── test_simple_website.py
+│   ├── test_smoke.py
+│   ├── test_tasks_mod.py
+│   ├── test_tasks_service.py
+│   ├── test_team_dashboard_api.py
+│   ├── test_team_dashboard_pipeline_extra.py
+│   ├── test_team_dashboard.py
+│   ├── test_team_work.py
+│   ├── test_test_fix_assistant.py
+│   ├── test_t_shirt_app.py
+│   ├── test_tshirt_shop.py
+│   ├── test_tshirt_shop_v2.py
+│   ├── test_ui_scaffold_from_intake_locales.py
+│   ├── test_ui_scaffold_locales.py
+│   ├── test_ui_scaffold_react.py
+│   ├── test_user_service.py
+│   ├── test_velu_console_assistant_help.py
+│   ├── test_velu_demo_shop.py
+│   ├── test_velu_demo_shop_v2.py
+│   ├── test_velu_demo_shop_v3.py
+│   ├── test_velu_demo_shop_v4.py
+│   ├── test_velu_dev.py
+│   └── test_web_web.py
+├── tools
+│   └── autodev_cli.py
+├── ui
+│   └── console.html
+├── velu-console
+│   ├── public
+│   │   └── vite.svg
+│   ├── src
+│   │   ├── assets
+│   │   │   └── react.svg
+│   │   ├── api.js
+│   │   ├── app.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── Dockerfile
+│   ├── .env.local.open
+│   ├── .env.local.tiers
+│   ├── eslint.config.js
+│   ├── .gitignore
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   └── vite.config.js
+├── .venv
+│   ├── bin
+│   │   ├── activate
+│   │   ├── activate.csh
+│   │   ├── activate.fish
+│   │   ├── Activate.ps1
+│   │   ├── black
+│   │   ├── blackd
+│   │   ├── chardetect
+│   │   ├── coverage3
+│   │   ├── coverage-3.12
+│   │   ├── cyclonedx-py
+│   │   ├── distro
+│   │   ├── docutils
+│   │   ├── doesitcache
+│   │   ├── email_validator
+│   │   ├── fastapi
+│   │   ├── git-filter-repo
+│   │   ├── httpx
+│   │   ├── identify-cli
+│   │   ├── jsonpointer
+│   │   ├── jsonschema
+│   │   ├── keyring
+│   │   ├── markdown-it
+│   │   ├── nltk
+│   │   ├── nodeenv
+│   │   ├── normalizer
+│   │   ├── openai
+│   │   ├── pip
+│   │   ├── pip3
+│   │   ├── pip3.12
+│   │   ├── pip-audit
+│   │   ├── pre-commit
+│   │   ├── pygmentize
+│   │   ├── pyproject-build
+│   │   ├── pyrsa-decrypt
+│   │   ├── pyrsa-encrypt
+│   │   ├── pyrsa-keygen
+│   │   ├── pyrsa-priv2pub
+│   │   ├── pyrsa-sign
+│   │   ├── pyrsa-verify
+│   │   ├── py.test
+│   │   ├── pytest
+│   │   ├── python -> python3
+│   │   ├── python3 -> /usr/bin/python3
+│   │   ├── python3.12 -> python3
+│   │   ├── rst2html
+│   │   ├── rst2html4
+│   │   ├── rst2html5
+│   │   ├── rst2latex
+│   │   ├── rst2man
+│   │   ├── rst2odt
+│   │   ├── rst2pseudoxml
+│   │   ├── rst2s5
+│   │   ├── rst2xetex
+│   │   ├── rst2xml
+│   │   ├── ruff
+│   │   ├── safety
+│   │   ├── tqdm
+│   │   ├── twine
+│   │   ├── typer
+│   │   ├── uvicorn
+│   │   └── virtualenv
+│   ├── include
+│   │   ├── python3.12
+│   │   └── site
+│   │       └── python3.12
+│   │           └── greenlet
+│   ├── lib
+│   │   └── python3.12
+│   │       └── site-packages
+│   │           ├── annotated_types
+│   │           ├── annotated_types-0.7.0.dist-info
+│   │           ├── anyio
+│   │           ├── anyio-4.11.0.dist-info
+│   │           ├── arrow
+│   │           ├── arrow-1.3.0.dist-info
+│   │           ├── attr
+│   │           ├── attrs
+│   │           ├── attrs-25.3.0.dist-info
+│   │           ├── authlib
+│   │           ├── authlib-1.6.4.dist-info
+│   │           ├── bcrypt
+│   │           ├── bcrypt-5.0.0.dist-info
+│   │           ├── black
+│   │           ├── black-24.4.2.dist-info
+│   │           ├── blackd
+│   │           ├── blib2to3
+│   │           ├── boolean
+│   │           ├── boolean_py-5.0.dist-info
+│   │           ├── build-1.3.0.dist-info
+│   │           ├── cachecontrol
+│   │           ├── cachecontrol-0.14.3.dist-info
+│   │           ├── certifi
+│   │           ├── certifi-2025.8.3.dist-info
+│   │           ├── cffi
+│   │           ├── cffi-2.0.0.dist-info
+│   │           ├── cfgv-3.4.0.dist-info
+│   │           ├── chardet
+│   │           ├── chardet-5.2.0.dist-info
+│   │           ├── charset_normalizer
+│   │           ├── charset_normalizer-3.4.3.dist-info
+│   │           ├── click
+│   │           ├── click-8.3.0.dist-info
+│   │           ├── coverage-7.10.7.dist-info
+│   │           ├── cryptography
+│   │           ├── cryptography-46.0.1.dist-info
+│   │           ├── cyclonedx
+│   │           ├── cyclonedx_bom-7.1.0.dist-info
+│   │           ├── cyclonedx_py
+│   │           ├── cyclonedx_python_lib-11.1.0.dist-info
+│   │           ├── dataclasses_json
+│   │           ├── dataclasses_json-0.6.7.dist-info
+│   │           ├── dateutil
+│   │           ├── dateutil-stubs
+│   │           ├── defusedxml
+│   │           ├── defusedxml-0.7.1.dist-info
+│   │           ├── distlib
+│   │           ├── distlib-0.4.0.dist-info
+│   │           ├── distro
+│   │           ├── distro-1.9.0.dist-info
+│   │           ├── _distutils_hack
+│   │           ├── dns
+│   │           ├── dnspython-2.8.0.dist-info
+│   │           ├── docutils
+│   │           ├── docutils-0.22.3.dist-info
+│   │           ├── dparse
+│   │           ├── dparse-0.6.4.dist-info
+│   │           ├── ecdsa
+│   │           ├── ecdsa-0.19.1.dist-info
+│   │           ├── email_validator
+│   │           ├── email_validator-2.3.0.dist-info
+│   │           ├── fastapi
+│   │           ├── fastapi-0.118.0.dist-info
+│   │           ├── filelock
+│   │           ├── filelock-3.19.1.dist-info
+│   │           ├── fqdn
+│   │           ├── fqdn-1.5.1.dist-info
+│   │           ├── git_filter_repo-2.47.0.dist-info
+│   │           ├── greenlet
+│   │           ├── greenlet-3.3.0.dist-info
+│   │           ├── h11
+│   │           ├── h11-0.16.0.dist-info
+│   │           ├── httpcore
+│   │           ├── httpcore-1.0.9.dist-info
+│   │           ├── httpx
+│   │           ├── httpx-0.28.1.dist-info
+│   │           ├── id
+│   │           ├── id-1.5.0.dist-info
+│   │           ├── identify
+│   │           ├── identify-2.6.14.dist-info
+│   │           ├── idna
+│   │           ├── idna-3.10.dist-info
+│   │           ├── iniconfig
+│   │           ├── iniconfig-2.1.0.dist-info
+│   │           ├── isoduration
+│   │           ├── isoduration-20.11.0.dist-info
+│   │           ├── jaraco
+│   │           ├── jaraco.classes-3.4.0.dist-info
+│   │           ├── jaraco.context-6.0.1.dist-info
+│   │           ├── jaraco_functools-4.3.0.dist-info
+│   │           ├── jeepney
+│   │           ├── jeepney-0.9.0.dist-info
+│   │           ├── jinja2
+│   │           ├── jinja2-3.1.6.dist-info
+│   │           ├── jiter
+│   │           ├── jiter-0.12.0.dist-info
+│   │           ├── joblib
+│   │           ├── joblib-1.5.2.dist-info
+│   │           ├── jose
+│   │           ├── jsonpointer-3.0.0.dist-info
+│   │           ├── jsonschema
+│   │           ├── jsonschema-4.25.1.dist-info
+│   │           ├── jsonschema_specifications
+│   │           ├── jsonschema_specifications-2025.9.1.dist-info
+│   │           ├── jwt
+│   │           ├── keyring
+│   │           ├── keyring-25.6.0.dist-info
+│   │           ├── lark
+│   │           ├── lark-1.3.0.dist-info
+│   │           ├── license_expression
+│   │           ├── license_expression-30.4.4.dist-info
+│   │           ├── lxml
+│   │           ├── lxml-6.0.2.dist-info
+│   │           ├── markdown_it
+│   │           ├── markdown_it_py-4.0.0.dist-info
+│   │           ├── markupsafe
+│   │           ├── markupsafe-3.0.3.dist-info
+│   │           ├── marshmallow
+│   │           ├── marshmallow-3.26.1.dist-info
+│   │           ├── mdurl
+│   │           ├── mdurl-0.1.2.dist-info
+│   │           ├── more_itertools
+│   │           ├── more_itertools-10.8.0.dist-info
+│   │           ├── msgpack
+│   │           ├── msgpack-1.1.1.dist-info
+│   │           ├── multipart
+│   │           ├── mypy_extensions-1.1.0.dist-info
+│   │           ├── nh3
+│   │           ├── nh3-0.3.2.dist-info
+│   │           ├── nltk
+│   │           ├── nltk-3.9.1.dist-info
+│   │           ├── nodeenv-1.9.1.dist-info
+│   │           ├── openai
+│   │           ├── openai-2.8.0.dist-info
+│   │           ├── packageurl
+│   │           ├── packageurl_python-0.17.5.dist-info
+│   │           ├── packaging
+│   │           ├── packaging-25.0.dist-info
+│   │           ├── passlib
+│   │           ├── passlib-1.7.4.dist-info
+│   │           ├── pathspec
+│   │           ├── pathspec-0.12.1.dist-info
+│   │           ├── pip
+│   │           ├── pip-25.2.dist-info
+│   │           ├── pip_api
+│   │           ├── pip_api-0.0.34.dist-info
+│   │           ├── pip_audit
+│   │           ├── pip_audit-2.9.0.dist-info
+│   │           ├── pip_requirements_parser-32.0.1.dist-info
+│   │           ├── pkg_resources
+│   │           ├── platformdirs
+│   │           ├── platformdirs-4.4.0.dist-info
+│   │           ├── pluggy
+│   │           ├── pluggy-1.6.0.dist-info
+│   │           ├── pre_commit
+│   │           ├── pre_commit-4.3.0.dist-info
+│   │           ├── prometheus_client
+│   │           ├── prometheus_client-0.23.1.dist-info
+│   │           ├── psutil
+│   │           ├── psutil-7.1.0.dist-info
+│   │           ├── psycopg
+│   │           ├── psycopg-3.3.2.dist-info
+│   │           ├── psycopg_binary
+│   │           ├── psycopg_binary-3.3.2.dist-info
+│   │           ├── psycopg_binary.libs
+│   │           ├── pyasn1
+│   │           ├── pyasn1-0.6.1.dist-info
+│   │           ├── pycparser
+│   │           ├── pycparser-2.23.dist-info
+│   │           ├── pydantic
+│   │           ├── pydantic-2.11.9.dist-info
+│   │           ├── pydantic_core
+│   │           ├── pydantic_core-2.33.2.dist-info
+│   │           ├── pygments
+│   │           ├── pygments-2.19.2.dist-info
+│   │           ├── PyJWT-2.10.1.dist-info
+│   │           ├── pyparsing
+│   │           ├── pyparsing-3.2.5.dist-info
+│   │           ├── pyproject_hooks
+│   │           ├── pyproject_hooks-1.2.0.dist-info
+│   │           ├── py_serializable
+│   │           ├── py_serializable-2.1.0.dist-info
+│   │           ├── _pytest
+│   │           ├── pytest
+│   │           ├── pytest-8.4.2.dist-info
+│   │           ├── pytest_asyncio
+│   │           ├── pytest_asyncio-1.3.0.dist-info
+│   │           ├── pytest_cov
+│   │           ├── pytest_cov-7.0.0.dist-info
+│   │           ├── python_dateutil-2.9.0.post0.dist-info
+│   │           ├── python_jose-3.5.0.dist-info
+│   │           ├── python_multipart
+│   │           ├── python_multipart-0.0.20.dist-info
+│   │           ├── pytokens
+│   │           ├── pytokens-0.1.10.dist-info
+│   │           ├── pyyaml-6.0.3.dist-info
+│   │           ├── readme_renderer
+│   │           ├── readme_renderer-44.0.dist-info
+│   │           ├── referencing
+│   │           ├── referencing-0.36.2.dist-info
+│   │           ├── regex
+│   │           ├── regex-2025.9.18.dist-info
+│   │           ├── requests
+│   │           ├── requests-2.32.5.dist-info
+│   │           ├── requests_toolbelt
+│   │           ├── requests_toolbelt-1.0.0.dist-info
+│   │           ├── rfc3339_validator-0.1.4.dist-info
+│   │           ├── rfc3986
+│   │           ├── rfc3986-2.0.0.dist-info
+│   │           ├── rfc3986_validator-0.1.1.dist-info
+│   │           ├── rfc3987-1.3.8.dist-info
+│   │           ├── rfc3987_syntax
+│   │           ├── rfc3987_syntax-1.1.0.dist-info
+│   │           ├── rich
+│   │           ├── rich-14.1.0.dist-info
+│   │           ├── rpds
+│   │           ├── rpds_py-0.27.1.dist-info
+│   │           ├── rsa
+│   │           ├── rsa-4.9.1.dist-info
+│   │           ├── ruamel
+│   │           ├── ruamel.yaml-0.18.15.dist-info
+│   │           ├── ruamel.yaml.clib-0.2.14.dist-info
+│   │           ├── ruff
+│   │           ├── ruff-0.13.2.dist-info
+│   │           ├── safety
+│   │           ├── safety-3.6.2.dist-info
+│   │           ├── safety_schemas
+│   │           ├── safety_schemas-0.0.16.dist-info
+│   │           ├── secretstorage
+│   │           ├── secretstorage-3.4.0.dist-info
+│   │           ├── setuptools
+│   │           ├── setuptools-80.9.0.dist-info
+│   │           ├── shellingham
+│   │           ├── shellingham-1.5.4.dist-info
+│   │           ├── six-1.17.0.dist-info
+│   │           ├── sniffio
+│   │           ├── sniffio-1.3.1.dist-info
+│   │           ├── sortedcontainers
+│   │           ├── sortedcontainers-2.4.0.dist-info
+│   │           ├── sqlalchemy
+│   │           ├── sqlalchemy-2.0.45.dist-info
+│   │           ├── starlette
+│   │           ├── starlette-0.48.0.dist-info
+│   │           ├── tenacity
+│   │           ├── tenacity-9.1.2.dist-info
+│   │           ├── toml
+│   │           ├── toml-0.10.2.dist-info
+│   │           ├── tomlkit
+│   │           ├── tomlkit-0.13.3.dist-info
+│   │           ├── tqdm
+│   │           ├── tqdm-4.67.1.dist-info
+│   │           ├── twine
+│   │           ├── twine-6.2.0.dist-info
+│   │           ├── typer
+│   │           ├── typer-0.19.2.dist-info
+│   │           ├── types_python_dateutil-2.9.0.20250822.dist-info
+│   │           ├── typing_extensions-4.15.0.dist-info
+│   │           ├── typing_inspect-0.9.0.dist-info
+│   │           ├── typing_inspection
+│   │           ├── typing_inspection-0.4.1.dist-info
+│   │           ├── uri_template
+│   │           ├── uri_template-1.3.0.dist-info
+│   │           ├── urllib3
+│   │           ├── urllib3-2.5.0.dist-info
+│   │           ├── uvicorn
+│   │           ├── uvicorn-0.37.0.dist-info
+│   │           ├── virtualenv
+│   │           ├── virtualenv-20.34.0.dist-info
+│   │           ├── webcolors
+│   │           ├── webcolors-24.11.1.dist-info
+│   │           ├── _yaml
+│   │           ├── yaml
+│   │           ├── 30fcd23745efe32ce681__mypyc.cpython-312-x86_64-linux-gnu.so
+│   │           ├── _black_version.py
+│   │           ├── _cffi_backend.cpython-312-x86_64-linux-gnu.so
+│   │           ├── cfgv.py
+│   │           ├── distutils-precedence.pth
+│   │           ├── git_filter_repo.py
+│   │           ├── jsonpointer.py
+│   │           ├── mypy_extensions.py
+│   │           ├── nodeenv.py
+│   │           ├── packaging_legacy_version.py
+│   │           ├── pip_requirements_parser.py
+│   │           ├── py.py
+│   │           ├── rfc3339_validator.py
+│   │           ├── rfc3986_validator.py
+│   │           ├── rfc3987.py
+│   │           ├── _ruamel_yaml.cpython-312-x86_64-linux-gnu.so
+│   │           ├── six.py
+│   │           ├── typing_extensions.py
+│   │           └── typing_inspect.py
+│   ├── lib64 -> lib
+│   └── pyvenv.cfg
+├── .vscode
+│   ├── extensions.json
+│   └── settings.json
+├── web
+│   ├── pages
+│   │   └── index.tsx
+│   ├── i18n.locales.json
+│   ├── package.json
+│   ├── package-lock.json
+│   └── tsconfig.json
+├── account_api.py
+├── agents_bundle.md
+├── assert
+├── bandit.yaml
+├── .bashrc
+├── build.py
+├── CACHED
+├── Caddyfile
+├── Caddyfile.bak.2025-10-04-134941
+├── CODEOWNERS
+├── compose.repo.yml
+├── conftest.py
+├── CONTRIBUTING.md
+├── .coverage
+├── coverage.xml
+├──  docker-compose.override.yml
+├── docker-compose.prod.yml
+├── docker-compose.test.yml
+├── docker-compose.yml
+├── docker-compose.yml.bak
+├── Dockerfile
+├── Dockerfile.api
+├── Dockerfile.base
+├── Dockerfile.worker
+├── .dockerignore
+├── .editorconfig
+├── .env.example
+├── .env.local.bak
+├── .env.local-dev
+├── .env.secrets
+├── .env.test
+├── .env.test.secrets
+├── .gitattributes
+├── .git-blame-ignore-revs
+├── .git-filter-repo-replacements.txt
+├── .gitignore
+├── job-51869456615.log
+├── job-51869456615-logs.zip
+├── job-51869456615.txt
+├── job-51869456615.zip
+├── LICENSE
+├── local_tasks.py
+├── main.py
+├── Makefile
+├── Makefile.bak
+├── mypy.ini
+├── my_trips_api.py
+├── package.json
+├── package-lock.json
+├── packager_demo_mod.zip
+├── .pre-commit-config.yaml
+├── product_v1.db
+├── product.zip
+├── prometheus_stats.json
+├── prometheus.yml
+├── pyproject.toml
+├── pytest.ini
+├── reading
+├── README.md
+├── README_packaged.md
+├── requirements.txt
+├── run-18217369888.log
+├── run-18217369888.zip
+├── run_api_shop.sh
+├── run_ui_shop.sh
+├── sandbox_saas_app.py
+├── sitecustomize.py
+├── task_ui.json
+├── team_dashboard_api.py
+├── team_dashboard.py
+├── travel_api.py
+├── TREE_REPO.txt
+├── velu_chat_behavior_2025.txt
+├── velu_repo_tree.txt
+└── .yamllint.yaml
+
+501 directories, 1551 files

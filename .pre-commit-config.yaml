@@ -1,0 +1,40 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 25.9.0
+    hooks:
+      - id: black
+        language_version: python3.12
+        exclude: |
+          (?x)^(
+            data/|
+            caddy_data/|
+            caddy_config/|
+            grafana_data/|
+            prom_data/|
+            node_modules/|
+            \.venv/|
+            dist/|build/
+          )
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+        exclude: |
+          (?x)^(
+            data/|
+            caddy_data/|
+            caddy_config/|
+            grafana_data/|
+            prom_data/|
+            node_modules/|
+            \.venv/|
+            dist/|build/
+          )
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.37.1
+    hooks:
+      - id: yamllint
+        files: \.ya?ml$

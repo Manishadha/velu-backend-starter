@@ -1,0 +1,11 @@
+{
+  "name": "velu-node-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

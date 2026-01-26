@@ -1,0 +1,166 @@
+/* Global layout */
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #f9fafb;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* Main app wrapper (used by App.jsx via className="app-shell") */
+.app-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Typography */
+h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h3 {
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h4 {
+  margin: 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Form elements */
+label {
+  display: block;
+  font-size: 12px;
+  color: #4b5563;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  background: #ffffff;
+  color: #0f172a;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Buttons */
+button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #111827;
+  background: #111827;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button.ghost {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #9ca3af;
+}
+
+/* Cards / helpers */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  margin: 12px 0;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.err {
+  color: #b00020;
+  font-weight: 600;
+}
+
+/* Code + pre blocks: very light sky blue */
+pre {
+  background: #e0f2fe; /* light sky blue */
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 12px;
+}
+
+code {
+  background: #e0f2fe; /* light sky blue */
+  padding: 0 4px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+/* Simple utility grids use from JSX */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/* Responsive behaviour for smaller screens */
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}

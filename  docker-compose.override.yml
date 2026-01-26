@@ -1,0 +1,14 @@
+services:
+  app:
+    env_file:
+      - .env
+      - .env.secrets
+
+  worker:
+    env_file:
+      - .env
+      - .env.secrets
+    environment:
+      TASK_DB: /data/tasks.db
+      TASK_LOG: /data/tasks.log
+      RULES_DIR: /app/data/rules

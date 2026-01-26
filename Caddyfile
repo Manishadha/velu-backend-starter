@@ -1,0 +1,25 @@
+# /opt/velu/Caddyfile
+:80 {
+  encode zstd gzip
+
+  # Optional static UI at /ui/
+  handle_path /ui/* {
+    root * /srv
+    try_files {path} {path}/ /index.html
+    file_server
+  }
+
+  # Protect only /metrics
+  route /metrics* {
+    basicauth {
+      admin $2a$14$Rj88DDAiPcprIoM4H.6vzO4jj1w5Hc5NfKA3GIE8EH.bJOPogLCI.
+    }
+    reverse_proxy app:8000
+  }
+
+  # Everything else → app
+  route * {
+    reverse_proxy app:8000
+  }
+}
+

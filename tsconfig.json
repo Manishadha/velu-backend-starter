@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "skipLibCheck": true
+  },
+  "exclude": ["templates/**", "artifacts/**", "dist/**", ".venv/**"]
+}
