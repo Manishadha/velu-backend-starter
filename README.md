@@ -15,7 +15,7 @@ It is extracted from the larger **Velu system** as a focused, portfolio-ready ba
 
 ---
 
-## 🚀 Why this project matters
+##  Why this project matters
 
 This is **not just a queue**.
 
@@ -36,7 +36,7 @@ These are the same patterns used by:
 
 ---
 
-## 🧠 Architecture (high level)
+##  Architecture (high level)
 
 Client
 |
@@ -113,7 +113,7 @@ Keywords:
 
 distributed systems, workers, leasing, SKIP LOCKED, crash recovery, backend engineering, job queues
 
-🚀 Quickstart (local demo)
+ Quickstart (local demo)
 1) Setup
 python -m venv .venv
 source .venv/bin/activate
@@ -144,8 +144,8 @@ curl -X POST http://127.0.0.1:8010/tasks \
   -H "X-API-Key: <KEY>" \
   -H "content-type: application/json" \
   -d '{"task":"execute","payload":{"cmd":"echo hello"}}'
-📸 Crash Recovery Demo (screenshots)
-👉 Full walkthrough with screenshots:
+ Crash Recovery Demo (screenshots)
+ Full walkthrough with screenshots:
 
 docs/demos/pg-leases
 Demonstrates:
@@ -165,7 +165,7 @@ This proves:
 ✔ leasing
 ✔ recovery
 
-🧪 What to test (interview talking points)
+ What to test (interview talking points)
 Run two workers and:
 
 Test 1 — no double execution
@@ -180,14 +180,14 @@ Test 3 — horizontal scale
 Run 5+ workers
 → throughput increases linearly
 
-📁 Repository Tour
+ Repository Tour
 Path	Purpose
 services/queue/jobs_postgres.py	Postgres queue backend
 services/queue/worker_entry.py	worker runtime
 services/app_server	API routes
 services/db/migrations	schema
 docs/demos	screenshots
-👤 Author
+ Author
 Mani Naduvil Sasi
 Backend / Distributed Systems Engineer
 
