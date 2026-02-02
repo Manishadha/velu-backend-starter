@@ -56,6 +56,21 @@ Core components:
 
 ---
 
+---
+
+## 📸 Crash Recovery Demo (Postgres leasing)
+
+See the full visual walkthrough with screenshots:
+
+👉 **[docs/demos/pg-leases/README.md](docs/demos/pg-leases/README.md)**
+
+This demo proves:
+- atomic job claiming (SKIP LOCKED)
+- lease-based execution
+- worker crash recovery
+- automatic reclaim by another worker
+
+
 ## Quickstart (local demo)
 
 ### 1) Create venv + install
