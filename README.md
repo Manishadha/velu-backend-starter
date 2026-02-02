@@ -60,9 +60,9 @@ Postgres
 
 ---
 
-## ⚙️ Core Features
+##  Core Features
 
-### 🔹 Atomic claiming
+###  Atomic claiming
 Uses:
 
 ```sql
